@@ -128,6 +128,8 @@ input[id="tab05"]:checked ~ .con5, input[id="tab06"]:checked ~ .con6 {
     overflow: hidden;
     border-radius: 300px;
     border: 1px #000 solid;
+    display: block;
+    cursor: pointer;
   }
   .slide p{
     line-height: 300px;
@@ -140,7 +142,68 @@ input[id="tab05"]:checked ~ .con5, input[id="tab06"]:checked ~ .con6 {
   }
 
   /* 여행코스 추천 */
-  .course_line{
+  .course_recommond{
     width: 100%; height: 700px;
     background-color: #DFF0FF;
+  }
+  .course_recommond h1{
+    padding-top: 60px;
+  }
+  .course_con{
+    width: 1800px; height: 800px;
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+  }
+  .course_recommond .box{
+    width: 360px; height: 800px;
+    border: 1px solid #000;
+  }
+
+  .namebox1{
+    width: 300px; height: 50px;
+    background-color: #FFC2E2;
+    border-radius: 50px;
+    color: #000;
+    text-align: center;
+    line-height: 50px;
+    margin-top: 10px;
+  }
+  .namebox2{
+    width: 300px; height: 50px;
+    background-color: #6FBAFF;
+    border-radius: 50px;
+    color: #000;
+    text-align: center;
+    line-height: 50px;
+    margin-top: 10px;
+  }
+  .course_recommond #course_line1{
+    width: 8px; height: 700px;
+    background-color: #FFC2E2;
+    border-radius: 30px;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 50px;
+  }
+  .course_recommond #course_line2{
+    width: 8px; height: 700px;
+    background-color: #6FBAFF;
+    border-radius: 30px;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 50px;
+  }
+  ul{
+    list-style-type: none;
+  }
+  .dot{
+    margin: 0;
+    margin-top: 17px;
+    margin-left: 6px;
+    width: 16px; height: 16px;
+    background-color: #000;
+    border-radius: 100%;
+    position: absolute;
+    z-index: 1;
   }
