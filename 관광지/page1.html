@@ -5,38 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>page1</title>
     <!--css-->
-    <link rel="stylesheet" href="/menubar.css"">
+    <link rel="stylesheet" href="/menubar.css">
     <style>
         #search-form{
             width: 1440px;
             height: 480px;
-            border: solid black;
             margin-top: 100px;
             
         }
 
         #search-first{
-            border: solid white;
             height: 100px;
         }
 
         #search-second{
-            border: solid white;
             height: 100px;
             margin-top: 10px;
         }
 
         #search-tree{
-            border: solid white;
             height: 100px;
             margin-top: 10px;
         }
 
         #search{
-            border: solid white;
             height: 100px;
             margin-top: 10px;
-            width: 1900PX;
+            width: 1440;
+        }
+
+
+        #content-box{
+            width: 1284px;
+            height: 2250px;
+            background-color: white;
+            margin-left: 80px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            border: solid red;
         }
         
 
@@ -204,6 +209,53 @@
             color: white;
             font-size: 40px;
         }
+
+        .content2{
+            border-radius: 50px 50px 0 0;
+            width: 1280px;
+            border: solid none;
+            background-color: white;
+            height: 122px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 126PX;
+            margin-left: 80px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        .content2 input[type=radio]{
+            display: none;
+            
+        }
+
+        .content2 input[type=radio]+label{
+            display: inline-block;
+            cursor: pointer;
+            height: 122PX;
+            width: 630px;
+            border-radius: 50px 50px 0 0;
+            line-height: 24px;
+            font-weight:bold;
+            font-size:40px;
+            display: flex;
+            justify-content: space-between; /* 양 끝에 배치 */
+            width: 100%; /* 부모 컨테이너의 전체 너비를 사용 */
+            align-items: center;    
+            margin-right: 24px;
+            
+           
+           
+        }
+        .content2 input[type=radio]+label{
+            background-color: #FFC2E2;
+            color: #333;
+        }
+        .content2 input[type=radio]:checked+label{
+            background-color: #fff;
+            color: #333;
+        }
     </style>
 </head>
 <body>
@@ -305,7 +357,11 @@
                 <input type="submit" value="검색">
            </div>
         </div>
-        <div id="content2">
+        <div class="content2">
+            <input type="radio" name="content-tour" id="ct" checked><label for="ct">관광지</label>
+            <input type="radio" name="content-tour" id="cf"><label for="cf">축제</label>
+        </div>
+        <div id="content-box">
 
         </div>
 
