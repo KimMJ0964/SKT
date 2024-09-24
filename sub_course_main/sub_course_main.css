@@ -68,6 +68,7 @@ input[type="text"]{
     font-size: 20px;
     font-weight: 800;
     font-family: 'NanumSquareRound';
+    text-align: center;
     line-height: 40px;
     border-radius: 100px;
     border: none;
@@ -93,6 +94,7 @@ input[type="radio"]:checked + label {
     background: #aaa;
     margin: 20px auto;
     display: none;
+    text-align: center;
     line-height: 200px;
     font-size: 16px;
     color: white;
@@ -111,6 +113,7 @@ input[id="tab05"]:checked ~ .con5, input[id="tab06"]:checked ~ .con6 {
 }
 .course_slide h1{
     margin-top: 100px;
+    text-align: center;
 }
 .slide_contain{
     width: 1580px;
@@ -131,8 +134,9 @@ input[id="tab05"]:checked ~ .con5, input[id="tab06"]:checked ~ .con6 {
     display: block;
     cursor: pointer;
   }
-  .slide p{
+  .slide > p{
     line-height: 300px;
+    text-align: center;
   }
   .slide:last-child{
     margin-right: 0;
@@ -143,11 +147,12 @@ input[id="tab05"]:checked ~ .con5, input[id="tab06"]:checked ~ .con6 {
 
   /* 여행코스 추천 */
   .course_recommond{
-    width: 100%; height: 700px;
+    width: 100%; height: 1100px;
     background-color: #DFF0FF;
   }
   .course_recommond h1{
     padding-top: 60px;
+    text-align: center;
   }
   .course_con{
     width: 1800px; height: 800px;
@@ -157,7 +162,6 @@ input[id="tab05"]:checked ~ .con5, input[id="tab06"]:checked ~ .con6 {
   }
   .course_recommond .box{
     width: 360px; height: 800px;
-    border: 1px solid #000;
   }
 
   .namebox1{
@@ -179,10 +183,11 @@ input[id="tab05"]:checked ~ .con5, input[id="tab06"]:checked ~ .con6 {
     margin-top: 10px;
   }
   .course_recommond #course_line1{
-    width: 8px; height: 700px;
+    width: 8px; height: 600px;
     background-color: #FFC2E2;
     border-radius: 30px;
     position: absolute;
+    z-index: 1;
     margin-top: 20px;
     margin-left: 50px;
   }
@@ -197,13 +202,56 @@ input[id="tab05"]:checked ~ .con5, input[id="tab06"]:checked ~ .con6 {
   ul{
     list-style-type: none;
   }
+  ul li{
+    width: 100%; height: 20px;
+    flex-wrap: wrap;
+  }
+
   .dot{
     margin: 0;
-    margin-top: 17px;
-    margin-left: 6px;
-    width: 16px; height: 16px;
+    margin-top: 35px;
+    margin-left: 4px;
+    width: 20px; height: 20px;
     background-color: #000;
     border-radius: 100%;
-    position: absolute;
-    z-index: 1;
+    position: relative;
+    z-index: 100;
+    display: block;
+    cursor: pointer;
+  }
+  .dot-con:not(.first-dot){
+    margin-top: 160px;
+  }
+
+  .dot-con{
+    width: 100%; height: 170px;
+  }
+  .dot-con > p{
+    width: fit-content; height: 30px;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: left;
+    margin: -20px 0 0 40px;
+    display: block;
+    cursor: pointer;
+  }
+
+  .text-desc{
+    width: 280px; height: 120px;
+    float: right;
+    overflow-y: scroll;
+    background-color: #DFF0FF;
+    padding: 5px;
+    border-radius: 20px;
+    display: none;
+  }
+  #info{
+    text-align: left;
+    padding: 5px;
+  }
+  tr{
+    height: 30px;
+  }
+  th{
+    padding-right: 5px;
   }
