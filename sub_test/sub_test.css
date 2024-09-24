@@ -4,31 +4,31 @@
     font-weight: bolder;
     font-style: normal;
   }
-  /* 나눔 스퀘어 라운드
-  Light(300)
-  Regular(400)
-  Bold(700)
-  Extra Bold(800) */
   *{
     margin: 0 auto;
     padding: 0 auto;
     box-sizing: border-box;
     
   }
-  .body{
-    height: auto; 
-    overflow: hidden; 
+  body {
+    padding-bottom: 100px; /* 하단 여백 추가 */
     font-family: 'NanumSquareRound';
     font-size: 14px;
-    color:black;
-    background-color:#DFF0FF;
-  }
+    color: black;
+    background-color: #DFF0FF;
+    overflow-y: auto; /* 필요할 때만 세로 스크롤 생성 */
+    overflow-x: hidden; /* 수평 스크롤 막기 */
+}
+
+.container {
+    width: 100%;
+    height: auto; /* 자동 높이 설정 */
+}
+
   img{
     border: 0px;
   }
-  .container{
-    width: 100%;height: auto;
-  }
+ 
   
   /* main */
   #main{
@@ -37,17 +37,14 @@
     text-align: center;
     margin-top: 20px;
   }
-  #main #logo{
-    margin-top: 20px;
-  }
   #main h3{
     font-size: 50px;
     text-align: center;
-    color: #734D32;
+    color: #000000;
     font-family: 'NanumSquareRound';
     font-weight: 800;
     letter-spacing: -1.5px;
-    -webkit-text-stroke: #734D32 0.5px;
+    -webkit-text-stroke: #000000 0.5px;
     padding-top: 30px;
   }
   .slide_contain{
@@ -75,7 +72,7 @@
     clear: both;
     font-size: 30px;
     letter-spacing: -1px;
-    color: #734D32;
+    color: #d8d8d8;
     font-weight: 400;
     -webkit-text-stroke: 0.5px;
     padding-top: 30px;
@@ -86,20 +83,19 @@
   
   #main button{
     margin-top: 60px;
-    width: 440px;height: 90px;
-    border-radius: 60px;
+    width: 550px;height: 90px;
+    border-radius: 30px;
     background-color:rgba(255, 255, 0, 0);  
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-    border-color: #FF9E00;
-    background-color: #FF9E00;
+    background-color: #FFFFFF;
     font-size: 35px;
     font-weight: 800;
     text-align: center;
     line-height: 80px;
-    color:#fff;
+    color:black;
   }
   #main button:hover{
-    background-color:#734D32;
+    background-color:#6FBAFF;
     border: none;
     color: #ffffff;
     font-weight: 800;
@@ -116,8 +112,7 @@
     text-align: center;
     border-radius: 20px;
     font-size: 40px;
-    color: #734D32;
-    -webkit-text-stroke: 2px #734D32;
+    color: black;
     letter-spacing: -1px;
   }
   .answerBox{
@@ -126,27 +121,28 @@
   .answerList{
     font-size: 35px;
     text-align: center;
-    color: #734D32;
+    color: black;
     font-weight: 800;
-    background-color:#FFFAF0;
-    border: #B78B6C solid 3px;
-    border-radius: 60px;
+    background-color:rgba(0, 0, 0, 0);
+    border: #6FBAFF solid 3px;
+    border-radius: 30px;
     display: block;
     width: 80%;
+    height: 150px;
   }
   .answerList:hover, .answerList:focus{
-    background-color: #FFDDA1;
-    color: #734D32;
-    border: #B78B6C solid 3px;
+    background-color: #6FBAFF;
+    color: white;
+   
   }
   .status{
-    width: 80%; height: 30px;
+    width: 100%; height: 30px;
     border-radius: 20px;
-    background-color: #FFF2DC;
+    background-color: white;
   }
   .statusBar{
     height: 100%;
-    background: #FCBF49;
+    background: #6FBAFF;
     border-radius: 20px;
     float: left;
   }
@@ -166,22 +162,25 @@
     display: none;
     width: 70%; height: 1500px;
     text-align: center;
+    padding: 50px;
+    background-color: #ffffff;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 56px;
   }
   h3{
     margin-bottom: 20px;
     font-size: 40px;
-    color: #734D32;
+    color: black;
     letter-spacing: -1px;
     font-weight: 800;
-    -webkit-text-stroke: 0.5px #734D32;
+    
   }
   .resultname{
     width: 430px; height: 97px;
     position: absolute;
-    background-color: #FF9E00;
+    background-color: #6FBAFF;
     color: #fff;
     border-radius: 60px;
-    border: #956B4D 4px solid;
     font-size: 45px;
     text-align: center;
     line-height: 97px;
@@ -208,9 +207,9 @@
     border-radius: 60px;
     background-color: #FFFAF0;
     font-size: 28px;
-    color: #734D32;
+    color: #6FBAFF;
     font-weight: 800;
-    -webkit-text-stroke: 0.5px #734D32;
+    -webkit-text-stroke: 0.5px #6FBAFF;
     text-align: center;
     line-height: 75px;
     letter-spacing: -1px;
@@ -222,7 +221,7 @@
     padding-top: 65px;
     font-size: 30px;
     font-weight: 800;
-    color: #734D32;
+    color: #6FBAFF;
     letter-spacing: -2px;
   }
   .resultDesc1{
@@ -231,7 +230,7 @@
     width: 100%; height: 270px;
     font-size: 30px;
     font-weight: 800;
-    color: #734D32;
+    color: #6FBAFF;
     letter-spacing: -2px;
     border-bottom: dashed #B78B6C 2px;
   }
@@ -240,44 +239,45 @@
   }
   #family > p{
     font-size: 30px;
-    color: #734D32;
-    -webkit-text-stroke: 0.5px #734D32;
+    color: #6FBAFF;
+    -webkit-text-stroke: 0.5px #6FBAFF;
     letter-spacing: -2px;
   }
   #family > h1{
     font-size: 35px;
     font-weight: 800;
-    color: #734D32;
-    -webkit-text-stroke: #734D32 0.8px;
+    color: #6FBAFF;
+    -webkit-text-stroke: #6FBAFF 0.8px;
     letter-spacing: -2px;
   }
   #family > button{
     width: 645px; height: 100px;
-    background-color: #FCBF49;
+    background-color: #6FBAFF;
     color: #fff;
     font-size: 40px;
     -webkit-text-stroke: #fff 0.8px;
-    border: #B78B6C 4px solid;
+    border: #6FBAFF 4px solid;
     border-radius: 25px;
     margin-top: 40px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     letter-spacing: -2px;
   }
   hr{
-    border: 2px #B78B6C solid;
+    border: 2px #6FBAFF solid;
     margin-top: 65px;
   }
   .return{
     width: 355px; height: 88px;
     font-size: 30px;
-    background-color:#FFF2DC;
-    border: 4px solid #B78B6C;
+    background-color:white;
+    border: 4px solid #6FBAFF;
     border-radius: 60px;
     margin-top: 80px;
     margin-left: 20px;
+    color: 6FBAFF;
   }
   .return a{
-    color: #B78B6C;
+    color: #6FBAFF;
     font-weight: 800;
     padding-top: 15px;
     text-decoration: none;
@@ -287,7 +287,258 @@
     margin-left: 10px;
   }
   .return:hover, .return:focus{
-    background-color: #FFDDA1;
-    color:#734D32;
-    border: 4px solid #B78B6C;
+    background-color: #6FBAFF;
+    color:white;
+    border: 4px solid #6FBAFF;
+  }
+
+    /* 500px 이하의 화면 크기에서 적용할 스타일 */
+  @media (max-width: 480px) {
+    *{
+      margin: 0 auto;
+      padding: 0 auto;
+      box-sizing: border-box;
+      
+    }
+    body {
+      padding-bottom: 100px; /* 하단 여백 추가 */
+      font-family: 'NanumSquareRound';
+      font-size: 14px;
+      color: black;
+      background-color: #DFF0FF;
+      overflow-y: auto; /* 필요할 때만 세로 스크롤 생성 */
+      overflow-x: hidden; /* 수평 스크롤 막기 */
+  }
+  
+  .container {
+      width: 100%;
+      height: auto; /* 자동 높이 설정 */
+  }
+  
+    img{
+      border: 0px;
+    }
+   
+    
+    /* main */
+    #main{
+      width: 100%; height: 100px;
+      background-color: #DFF0FF;
+      text-align: center;
+      margin-top: 20px;
+
+    }
+    #main h3{
+      font-size: 50px;
+      text-align: center;
+      color: #000000;
+      font-family: 'NanumSquareRound';
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      -webkit-text-stroke: #000000 0.5px;
+      padding-top: 30px;
+    }
+    .slide_contain{
+      width: 100%; height: 347px;
+      margin-top: 65px;
+    }
+    .slides{
+      width: 1920px;
+      display: flex;
+      margin-left: -315px;
+      transition: transform 0.5s ease;
+    }
+    .slide{
+      min-width: 120%;height: 347px;
+      margin-left: 16px;
+      overflow: hidden;
+    }
+    .slide:last-child{
+      margin-right: 0;
+    }
+    .slide img{
+      width: 100%;height: 347px;
+    }
+    #main #test{
+      clear: both;
+      font-size: 30px;
+      letter-spacing: -1px;
+      color: #d8d8d8;
+      font-weight: 400;
+      -webkit-text-stroke: 0.5px;
+      padding-top: 30px;
+    }
+    #main #test b{
+      -webkit-text-stroke: 0.5px;
+    }
+    
+    #main button{
+      margin-top: 60px;
+      width: 550px;height: 90px;
+      border-radius: 30px;
+      background-color:rgba(255, 255, 0, 0);  
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+      background-color: #FFFFFF;
+      font-size: 35px;
+      font-weight: 800;
+      text-align: center;
+      line-height: 80px;
+      color:black;
+    }
+    #main button:hover{
+      background-color:#6FBAFF;
+      border: none;
+      color: #ffffff;
+      font-weight: 800;
+    }
+    
+    
+    /* QnA */
+    #qna{
+      display: none;
+      margin-top: 100px;
+    }
+    .qBox{
+      margin-top: 150px;
+      text-align: center;
+      border-radius: 20px;
+      font-size: 40px;
+      color: black;
+      letter-spacing: -1px;
+    }
+    .answerBox{
+      margin-top: 100px;
+    }
+    .answerList{
+      font-size: 35px;
+      text-align: center;
+      color: black;
+      font-weight: 800;
+      background-color:rgba(0, 0, 0, 0);
+      border: #6FBAFF solid 3px;
+      border-radius: 30px;
+      display: block;
+      width: 80%;
+      height: 150px;
+    }
+    .answerList:hover, .answerList:focus{
+      background-color: #6FBAFF;
+      color: white;
+     
+    }
+    .status{
+      width: 100%; height: 30px;
+      border-radius: 20px;
+      background-color: white;
+    }
+    .statusBar{
+      height: 100%;
+      background: #6FBAFF;
+      border-radius: 20px;
+      float: left;
+    }
+    .statusBar > #tic{
+      float: right;
+      margin-top: -18px;
+      margin-right: -27px;
+    }
+    #fes{
+      position: absolute;
+      margin-left: 1000px;
+      margin-top: -30px;
+    }
+    
+    
+    /* result */
+    #result {
+      display: block; 
+      width: 100%; 
+      padding: 10px;
+      box-sizing: border-box; 
+    }
+    
+    h3 {
+      font-size: 24px; 
+      margin-bottom: 15px; 
+    }
+  
+    .resultname {
+      width: 90px; 
+      height: 70px; 
+      font-size: 28px; 
+      line-height: 70px; 
+      margin: 20px auto 10px auto; 
+      position: static;
+    }
+    
+    #resultImg {
+      width: 100%; 
+      margin-top: 20px;
+      border-radius: 15px;
+    }
+  
+    #result > ul {
+      margin-top: 30px;
+      padding-left: 0; 
+      text-align: center; 
+    }
+  
+    #result > ul > li {
+      float: none; 
+      display: inline-block; 
+      margin: 10px; 
+    }
+  
+    .resulttag1, .resulttag2, .resulttag3 {
+      width: 180px; 
+      height: 60px;
+      font-size: 22px; 
+      line-height: 60px; 
+    }
+  
+    .resultDesc, .resultDesc1 {
+      font-size: 20px; 
+      padding-top: 30px; 
+      height: auto;
+      letter-spacing: -1px; 
+    }
+  
+    #family {
+      margin-top: 40px; 
+    }
+  
+    #family > p, #family > h1 {
+      font-size: 22px;
+      letter-spacing: -1px; 
+    }
+  
+    #family > button {
+      width: 100%; 
+      height: auto; 
+      font-size: 28px; 
+      padding: 15px;
+      margin-top: 20px; 
+    }
+  
+    hr {
+      margin-top: 30px; 
+      border-width: 1px; 
+    }
+  
+    .return {
+      width: 100%;
+      height: auto; 
+      font-size: 22px; 
+      padding: 15px;
+      margin-top: 30px; 
+      text-align: center;
+    }
+  
+    .return a {
+      font-size: 22px; 
+    }
+  
+    .return a img {
+      display: none; 
+    }
   }
