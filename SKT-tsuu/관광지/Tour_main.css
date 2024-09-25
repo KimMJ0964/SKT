@@ -1,0 +1,86 @@
+body{
+    width: 100%; height: fit-content;
+    background-color: #DFF0FF;
+    overflow-x: hidden;
+}
+#search-form{
+    width: 1440px;
+    height: 480px;
+    margin-top: 50px;
+}
+#search-con{
+    width: 1280px; height: 360px;
+    background-color: #fff;
+    margin: 0 auto;
+    border-radius: 50px;
+    
+}
+#search{
+    height: 100px;
+    margin-top: 10px;
+    width: 1440;
+}
+#content-box{
+    width: 1280px;
+    height: 2250px;
+    background-color: white;
+    margin-left: 80px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+#search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+input[type=submit]{
+    cursor: pointer;
+    width: 300px;
+    height: 80px;
+    border-radius: 50px;
+    border: solid #6FBAFF;
+    background-color: #6FBAFF;
+    color: white;
+    font-size: 40px;
+}
+
+
+.content2{
+    border-radius: 50px 50px 0 0;
+    width: 1280px;
+    border: solid none;
+    height: 122px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 60px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+.content2 input[type=radio]{
+    display: none;
+}
+.content2 input[type=radio]+label{
+    /* display: inline-block; */
+    cursor: pointer;
+    height: 122PX;
+    width: 700px;
+    border-radius: 50px 50px 0 0;
+    line-height: 24px;
+    font-weight:bold;
+    font-size: 40px;
+    display: flex;
+    justify-content: space-between; /* 양 끝에 배치 */
+    align-items: center;
+    justify-content: center;  
+}
+.content2 input[type=radio]+label{
+    background-color: #FFC2E2;
+    color: #333;
+}
+.content2 input[type=radio]:checked+label{
+    background-color: #fff;
+    color: #333;
+}
+.content2 label:last-child{
+    margin-left: 10px;
+}
