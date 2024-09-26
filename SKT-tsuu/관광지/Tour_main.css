@@ -1,5 +1,38 @@
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: bolder;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'nanumL';
+    src: url('font/NanumSquareRoundL.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'nanumR';
+    src: url('font/NanumSquareRoundR.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'nanumB';
+    src: url('font/NanumSquareRoundB.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'nanumEB';
+    src: url('font/NanumSquareRoundEB.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
 body{
     width: 100%; height: fit-content;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'NanumSquareRound';
     background-color: #DFF0FF;
     overflow-x: hidden;
 }
@@ -8,6 +41,35 @@ body{
     height: 480px;
     margin-top: 50px;
 }
+#search-con{
+    padding-top: 40px;
+}
+#search-con table{
+    width: 1000px; height: 300px;
+    margin: 0 auto;
+    font-size: 24px;
+    padding: 0;
+}
+#search-con table th{
+    width: 160px; height: 50px;
+}
+#search-con table p{
+    width: 130px; height: 50px;
+    line-height: 50px;
+    border-radius: 50px;
+    background-color: #B4DBFF;
+}
+#search-con table select{
+    width: 240px; height: 60px;
+    margin-left: 20px;
+    border: 4px #B4DBFF solid;
+    border-radius: 20px;
+    padding: 15px;
+    font-family: 'NanumSquareRound';
+    font-size: 20px;
+    font-weight: 700;
+}
+
 #search-con{
     width: 1280px; height: 360px;
     background-color: #fff;
@@ -34,13 +96,13 @@ body{
 }
 input[type=submit]{
     cursor: pointer;
-    width: 300px;
-    height: 80px;
+    width: 280px;
+    height: 60px;
     border-radius: 50px;
     border: solid #6FBAFF;
     background-color: #6FBAFF;
     color: white;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 
@@ -48,7 +110,7 @@ input[type=submit]{
     border-radius: 50px 50px 0 0;
     width: 1280px;
     border: solid none;
-    height: 122px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,14 +122,13 @@ input[type=submit]{
     display: none;
 }
 .content2 input[type=radio]+label{
-    /* display: inline-block; */
     cursor: pointer;
-    height: 122PX;
+    height: 100PX;
     width: 700px;
     border-radius: 50px 50px 0 0;
     line-height: 24px;
     font-weight:bold;
-    font-size: 40px;
+    font-size: 30px;
     display: flex;
     justify-content: space-between; /* 양 끝에 배치 */
     align-items: center;
