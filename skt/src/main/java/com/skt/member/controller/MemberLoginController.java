@@ -31,17 +31,25 @@ public class MemberLoginController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
-		
+		//test
+        String memId = request.getParameter("memId");
+        String memPwd = request.getParameter("memPwd");
+        
+        System.out.println("아이디: " + memId);
+        System.out.println("비밀번호: " + memPwd);
+        //
 		
 		Member m = new Member();
 		m.setMemId(request.getParameter("memId"));
 		m.setMemPwd(request.getParameter("memPwd"));
+		
 		MemberService memberService = new MemberServiceImpl(); 
 		Member loginUser = memberService.loginMember(m);
 
 		if(loginUser != null) {
 			request.getSession().setAttribute("loginUser", loginUser);
 			response.sendRedirect(request.getContextPath());
+			
 		} else {
 			request.setAttribute("errorMsg", "로그인 실패");
 			request.getRequestDispatcher("views/common/errorPage.jsp").forward(request, response);

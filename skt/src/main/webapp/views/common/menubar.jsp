@@ -7,11 +7,42 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: bolder;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'nanumL';
+    src: url('font/NanumSquareRoundL.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'nanumR';
+    src: url('font/NanumSquareRoundR.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'nanumB';
+    src: url('font/NanumSquareRoundB.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'nanumEB';
+    src: url('font/NanumSquareRoundEB.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
 body{
     display: flex;
     justify-content: center;
     align-items: center;
     background: #DFF0FF;
+    font-family: 'NanumSquareRound';
 }
 
 .wrap{
@@ -30,7 +61,6 @@ a {
     text-decoration: none;
     color: black;
 }
-
 
 
 #navigator {
