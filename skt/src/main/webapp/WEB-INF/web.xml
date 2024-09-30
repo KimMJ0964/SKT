@@ -19,4 +19,24 @@
     <servlet-name>login.me</servlet-name>
     <url-pattern>/login.me</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>logout.me</display-name>
+    <servlet-name>logout.me</servlet-name>
+    <servlet-class>com.skt.member.controller.MemberLogoutController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>logout.me</servlet-name>
+    <url-pattern>/logout.me</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>searchId.me</display-name>
+    <servlet-name>searchId.me</servlet-name>
+    <servlet-class>com.skt.member.controller.MemberSearchIdController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>searchId.me</servlet-name>
+    <url-pattern>/searchId.me</url-pattern>
+  </servlet-mapping>
 </web-app>

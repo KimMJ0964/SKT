@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+	String contextPath = request.getContextPath();
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -185,7 +188,7 @@ hr{
 	 <div class="nav-wrap">
         <div id="navigator">
             <ul id="navi">
-                <li><img src="${pageContext.request.contextPath}/views/common/img/logo_1.png" alt="로고"></li>
+                <li><img src="<%=contextPath %>/views/common/img/logo_1.png" alt="로고"></li>
                 <li class="nav-content">
                     <a href="">명소찾기</a>
                     <ul>
@@ -235,7 +238,7 @@ hr{
                         <hr>
                         <li><a href="">장바구니</a></li>
                         <hr>
-                        <li><a href="">로그아웃</a></li>
+                        <li><a href="<%=contextPath %>/logout.me">로그아웃</a></li>
                     </ul>
                 </div>
                 </c:otherwise>

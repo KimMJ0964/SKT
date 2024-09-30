@@ -25,4 +25,20 @@ public class MemberServiceImpl implements MemberService{
 	    
 	    return loginUser;
 	}
+
+	@Override
+		public Member searchByEmailOrPhone(String input) {
+		    SqlSession sqlSession = Template.getSqlSession();
+		    Member searchId = null;
+		    
+		    try {
+		        searchId = mDao.searchByEmailOrPhone(sqlSession, input);
+		    } catch (Exception e) {
+		        e.printStackTrace();
+		    } finally {
+		        sqlSession.close();
+		    }
+		    
+		    return searchId;
+		}
 }

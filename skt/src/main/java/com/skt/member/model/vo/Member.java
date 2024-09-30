@@ -28,7 +28,8 @@ public class Member {
 		this.status = status;
 		this.grade = grade;
 	}
-
+	
+	
 	public String getMemId() {
 		return memId;
 	}
@@ -107,6 +108,8 @@ public class Member {
 				+ ", address=" + address + ", memNo=" + memNo + ", email=" + email + ", status=" + status + ", grade="
 				+ grade + "]";
 	}
+	
+	
 	
 	
 }

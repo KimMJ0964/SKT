@@ -10,4 +10,8 @@ public class MemberDao {
 		return sqlSession.selectOne("memberMapper.loginMember",m);
 	}
 
+	public Member searchByEmailOrPhone(SqlSession sqlSession, String input) {
+	    return sqlSession.selectOne("memberMapper.searchByEmailOrPhone", input);
+	}
+
 }

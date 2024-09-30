@@ -40,4 +40,10 @@
 	  AND MEM_PWD = #{memPwd}
 	  AND STATUS = 'Y'
   </select>
+  <select id="searchId" parameterType="Member" resultMap="memberResultSet">
+    SELECT MEM_ID
+    FROM MEMBER
+    WHERE (EMAIL = #{email} OR PHONE = #{phone})
+      AND STATUS = 'Y'
+  </select>
 </mapper>
