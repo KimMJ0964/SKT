@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/views/login/login.css">
 </head>
 <body>
+<jsp:include page="/views/common/menubar.jsp" /> 
 	<div class="container">
     <form action="${pageContext.request.contextPath}/login.me" method="post">
          <img src="${pageContext.request.contextPath}/views/login/img/logo_1.png" alt="">

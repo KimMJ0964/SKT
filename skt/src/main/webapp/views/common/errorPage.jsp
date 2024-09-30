@@ -10,7 +10,7 @@
 	<%@ include file="menubar.jsp" %>
 	
 	<br><br>
-	
+
 	<h1 align="center" style="color:red" >${errorMsg}</h1>
 </body>
 </html>

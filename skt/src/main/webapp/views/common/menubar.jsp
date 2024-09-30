@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title></title>
 <style>
 @font-face {
     font-family: 'NanumSquareRound';
@@ -37,15 +37,22 @@
     font-weight: normal;
     font-style: normal;
   }
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #DFF0FF;
-    font-family: 'NanumSquareRound';
+  
+<!-- 공통 css -->
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.wrap{
+body {
+	display: flex;
+    justify-content: center;
+    background-color: #DFF0FF;
+    
+}
+
+.nav-wrap{
     width: 1440px;
     background-color: #DFF0FF;
 }
@@ -98,7 +105,7 @@ a {
     line-height: 36px;
 }
 
-#menu1 {
+#nav-menu1 {
     border: solid none;
     width: 55px;
     height: 55px;
@@ -108,7 +115,7 @@ a {
     margin-right: 28px;
 }
 
-#menu2 {
+#nav-menu2 {
     border: solid none;
     width: 55px;
     height: 55px;
@@ -118,14 +125,15 @@ a {
     margin-right: 28px;
 }
 
-.content{
+.nav-content{
     margin-top: 60px;
 }
 
-.icon{
+#navi img{
     width: 100px;  
     height: auto;
     margin-top: 10px;
+    margin-left:10px;
 }
 
 #navi a:hover {
@@ -133,18 +141,18 @@ a {
     scale: 1.08;
 }
 
-#navi>.content>ul {
+#navi>.nav-content>ul {
     display: none;
     padding: 15px 0;
     margin-top: -20px;
     margin-left: 40px;
 }
 
-#navi>.content>ul a {
+#navi>.nav-content>ul a {
     font-size: 20px;
 }
 
-#navi>.content>a:hover+ul {
+#navi>.nav-content>a:hover+ul {
     display: block;
     width: 160px;
     text-align: center;
@@ -157,7 +165,7 @@ a {
 }
 
 
-#navi>.content>ul:hover {
+#navi>.nav-content>ul:hover {
     display: block;
     text-align: center;
     width: 160px;
@@ -174,11 +182,11 @@ hr{
 </style>
 </head>
 <body>
-	 <div class="wrap">
+	 <div class="nav-wrap">
         <div id="navigator">
             <ul id="navi">
-                <li><img class="icon" src="views/common/img/logo_1.png" alt="없음"></li>
-                <li class="content">
+                <li><img src="${pageContext.request.contextPath}/views/common/img/logo_1.png" alt="로고"></li>
+                <li class="nav-content">
                     <a href="">명소찾기</a>
                     <ul>
                         <li><a href="">지역별</a></li>
@@ -187,7 +195,7 @@ hr{
                     </ul>
                 
                 </li>
-                <li class="content">
+                <li class="nav-content">
                     <a href="">축제</a>
                     <ul>
                         <li><a href="">MBTI</a></li>
@@ -199,17 +207,17 @@ hr{
                         <li><a href="">테마별</a></li>
                     </ul>
                 </li>
-                <li class="content">
+                <li class="nav-content">
                     <a href="">여행코스</a>
                 </li>
-                <li class="content">
+                <li class="nav-content">
                     <a href="">커뮤니티</a>
                 </li>
 
                 <c:choose>
     			<c:when test="${ empty loginUser }">
 		        <!-- 로그인전 -->
-				<div id="menu1" class="content">
+				<div id="nav-menu1" class="nav-content">
 				<a href=""></a>
 		        <ul>
                        <li><a onclick="location.href='views/login/login.jsp'">로그인</a></li>
@@ -220,7 +228,7 @@ hr{
                   </c:when>
 		        <c:otherwise>
 		        <!-- 로그인후 -->
-		        <div id="menu2" class="content">
+		        <div id="nav-menu2" class="nav-content">
 		        <a href=""></a>
                     <ul>
                         <li><a href="">마이페이지</a></li>
