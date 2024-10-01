@@ -1,13 +1,15 @@
 body{
+    width: 100%; height: fit-content;
     display: flex;
-    justify-content: center;
     align-items: center;
-    
+    background-color: #DFF0FF;
+    margin: 0 auto;
+    overflow-x: hidden;
 }
 
 .wrap{
-    width: 1440px;
-    background-color: #DFF0FF;
+    width: 100%;
+    margin: 0 auto;
 }
 
 /*menubar*/
@@ -25,12 +27,9 @@ a {
 
 
 #navigator {
+    margin: 0 auto;
     margin-top: 20px;
-    margin-left: 80px;
-    width: 1280px;
-    height: 90px;
-       
-    
+    width: 1280px;height: 90px;
 }
 
 #navi {
@@ -108,7 +107,7 @@ a {
 }
 
 
-#navi>.content>ul:hover {
+#navi > .content > ul:hover {
     display: block;
     text-align: center;
     width: 160px;
@@ -119,51 +118,21 @@ a {
     border-radius: 40px;
 }
 hr{
-    width: 120px;
-}
-
-/*제목*/
-#title{
-    margin-top: 50px;
-    align-items: center;
-    height: 60px;
-    width: 540px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #00B4D8;
-    border-radius: 10px;
-    margin-left: 470px;
-}
-
-.title-font{
+    width: 80px;
     text-align: center;
-    color: white;
-    font-size: 30px;
-}
-
-/*영상*/
-#hiperlink{
-    
-    width: 1440px;
-    height: 250px;
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.media{
-    border: none;
-    margin-right: 30px;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 /*푸터스타일*/
-/* #footer{
-    width: 100%;
-    height: 260px;
-} */
+#footer{
+    width:  100%;height: 250px;
+    background-color: #03045E;
+    color: #fff;
+    margin: 0;
+}
+#footer-con{
+    width: 100%; height: 200px;
+    padding-top: 30px;
+}
 
 #footer>div{
     width: 100%;
@@ -171,17 +140,17 @@ hr{
 
 #footer_1{
     height: 55px;
-    background: #f2f5f9;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    margin-left: 40px;
     gap: 10px;
 }
 
 #footer_1>a{
     text-decoration: none;
-    color: black;
+    color: #fff;
     font-size: 16px;
     font-weight: 500;
 }
@@ -199,9 +168,16 @@ hr{
 #footer_2>p:nth-child(1){
     font-size: 14px;
 }
+#footer-info{
+    margin-left: 40px;
+}
 
-#footer_2>p:nth-child(3){
+#footer_2 > p:last-child{
+    width: 98%;
     font-size: 11px;
+    text-align: right;
+    padding-top: 20px;
+    padding-right: 40px;
 }
 
 /* 모바일 화면 (480px 이하) */
