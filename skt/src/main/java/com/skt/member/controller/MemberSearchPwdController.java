@@ -7,20 +7,19 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import com.skt.member.model.vo.Member;
 import com.skt.member.service.MemberService;
 import com.skt.member.service.MemberServiceImpl;
 
 /**
- * Servlet implementation class MemberSearchIdController
+ * Servlet implementation class MemberSearchPwdController
  */
-public class MemberSearchIdController extends HttpServlet {
+public class MemberSearchPwdController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MemberSearchIdController() {
+    public MemberSearchPwdController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,21 +31,22 @@ public class MemberSearchIdController extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 	    response.setContentType("text/html; charset=UTF-8");
 	    
-	    String input = request.getParameter("input");
-	    
-	    System.out.println("입력 값: " + input);
-	    
 	    MemberService memberService = new MemberServiceImpl();
-	    String searchId = memberService.searchByEmailOrPhone(input);
+	    String memId = request.getParameter("memId");
+	    String email = request.getParameter("email");
 	    
-	    if (searchId != null) {
-	        request.getSession().setAttribute("searchId", searchId);
-	        request.getRequestDispatcher("views/login/searchIdResult.jsp").forward(request, response);
+	    System.out.println("입력값1: " + memId);
+	    System.out.println("입력값2: " + email);
+	    
+	    String searchPwd = memberService.searchPassword(memId, email);
+	    
+	    if (searchPwd != null) {
+	        request.getSession().setAttribute("searchPwd", searchPwd);
+	        request.getRequestDispatcher("views/login/searchPwdResult.jsp").forward(request, response);
 	    } else {
 	        request.setAttribute("errorMsg", "일치하는 아이디가 없습니다.");
 	        request.getRequestDispatcher("views/common/errorPage.jsp").forward(request, response);
 	    }
-
 	}
 
 	/**

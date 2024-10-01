@@ -108,6 +108,8 @@ a {
     line-height: 36px;
 }
 
+
+
 #nav-menu1 {
     border: solid none;
     width: 55px;
@@ -142,6 +144,10 @@ a {
 #navi a:hover {
     color: #868686;
     scale: 1.08;
+}
+
+#navi a.nav-logo{
+    scale: none;
 }
 
 #navi>.nav-content>ul {
@@ -188,7 +194,10 @@ hr{
 	 <div class="nav-wrap">
         <div id="navigator">
             <ul id="navi">
-                <li><img src="<%=contextPath %>/views/common/img/logo_1.png" alt="로고"></li>
+            
+                <li><a href="<%= request.getContextPath() %>/index.jsp" class="nav-logo">
+                <img src="<%=contextPath %>/views/common/img/logo_1.png" alt="로고" onclick href="<%= request.getContextPath() %>/index.jsp"></a></li>
+            
                 <li class="nav-content">
                     <a href="">명소찾기</a>
                     <ul>

@@ -39,4 +39,14 @@
     <servlet-name>searchId.me</servlet-name>
     <url-pattern>/searchId.me</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>searchPwd.me</display-name>
+    <servlet-name>searchPwd.me</servlet-name>
+    <servlet-class>com.skt.member.controller.MemberSearchPwdController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>searchPwd.me</servlet-name>
+    <url-pattern>/searchPwd.me</url-pattern>
+  </servlet-mapping>
 </web-app>

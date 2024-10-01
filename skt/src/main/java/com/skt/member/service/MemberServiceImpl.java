@@ -27,9 +27,9 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-		public Member searchByEmailOrPhone(String input) {
+		public String searchByEmailOrPhone(String input) {
 		    SqlSession sqlSession = Template.getSqlSession();
-		    Member searchId = null;
+		    String searchId = null;
 		    
 		    try {
 		        searchId = mDao.searchByEmailOrPhone(sqlSession, input);
@@ -41,4 +41,20 @@ public class MemberServiceImpl implements MemberService{
 		    
 		    return searchId;
 		}
+
+	@Override
+	public String searchPassword(String memId, String email) {
+		SqlSession sqlSession = Template.getSqlSession();
+		String searchPwd = null;
+		
+		try {
+			searchPwd = mDao.searchPassword(sqlSession, memId,email);
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    } finally {
+	        sqlSession.close();
+	    }
+		
+		return searchPwd;
+	}
 }

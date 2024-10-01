@@ -22,7 +22,7 @@
     </form>
     <div class="member">
     <a href="<%=contextPath %>/views/login/searchid.jsp"><b>아이디 찾기 | </b></a>
-    <a href=""><b>비밀번호 찾기</b></a>
+    <a href="<%=contextPath %>/views/login/searchPwd.jsp"><b>비밀번호 찾기</b></a>
     <br>
     <p id="memberp">아직 회원이 아니시라면 <b style="color: black;">회원가입</b></p>
     </div>
