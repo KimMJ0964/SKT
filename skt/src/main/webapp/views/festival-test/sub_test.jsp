@@ -29,9 +29,9 @@
     <section id="qna">
       <div class="status">
         <div class="statusBar">
-          <!-- <div id="tic"><img src="./images/ticket.png" width="20%"></div> -->
+         
         </div>
-        <!-- <div id="fes"><img src="./images/festival_icon.png"  width="20%"></div> -->
+
       </div>
       <div class="qBox">
 
@@ -43,7 +43,9 @@
     <section id="result" class="mx-auto my-4 py-5 px-3">
       <h3>나와 어울리는 축제는</h3>
       <div class="resultname"></div>
-      <div id="resultImg"></div>
+      <div id="resultImg">
+      
+      </div>
       <ul>
         <li><div class="resulttag1"></div></li>
         <li><div class="resulttag2"></div></li>

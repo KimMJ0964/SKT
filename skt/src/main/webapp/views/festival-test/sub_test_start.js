@@ -16,7 +16,7 @@ function setResult(){
 
   var resultImg =document.createElement('img');
   const imgDiv = document.querySelector('#resultImg');
-  var imgURL = '<%= request.getContextPath() %>/img' + point + '.png';
+  var imgURL = './img/img' + point + '.png';
   resultImg.src = imgURL;
   resultImg.alt = point;
   imgDiv.appendChild(resultImg);
