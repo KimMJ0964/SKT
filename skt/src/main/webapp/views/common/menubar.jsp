@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
-	String contextPath = request.getContextPath();
+   String contextPath = request.getContextPath();
 %>
 <!DOCTYPE html>
 <html>
@@ -49,7 +49,7 @@
 }
 
 body {
-	display: flex;
+   display: flex;
     justify-content: center;
     background-color: #DFF0FF;
     
@@ -61,13 +61,13 @@ body {
 }
 
 /*menubar*/
-ul, li, ol {
+#navi ul, li, ol {
     list-style: none;
     padding: 0px;
     margin: 0px;
 }
 
-a {
+#navi a {
     text-decoration: none;
     color: black;
 }
@@ -99,7 +99,7 @@ a {
     height: 100%;
 }
 
-#navi a {
+#navi  a {
     font-size: 24px;
     font-weight: 900;
     width: 100%;
@@ -184,17 +184,17 @@ a {
     z-index: 1;
     border-radius: 40px;
 }
-hr{
-    width: 120px;
+ .nav-wrap  hr{
+	margin:15px;
+    width: 80%;
 }
 
 </style>
 </head>
 <body>
-	 <div class="nav-wrap">
+    <div class="nav-wrap">
         <div id="navigator">
             <ul id="navi">
-            
                 <li><a href="<%= request.getContextPath() %>/index.jsp" class="nav-logo">
                 <img src="<%=contextPath %>/views/common/img/logo_1.png" alt="로고" onclick href="<%= request.getContextPath() %>/index.jsp"></a></li>
             
@@ -210,7 +210,7 @@ hr{
                 <li class="nav-content">
                     <a href="">축제</a>
                     <ul>
-                        <li><a href="">MBTI</a></li>
+                        <li><a href="<%=contextPath %>/views/festival-test/sub_test.jsp">MBTI</a></li>
                         <hr>
                         <li><a href="">계절별</a></li>
                         <hr>
@@ -227,21 +227,21 @@ hr{
                 </li>
 
                 <c:choose>
-    			<c:when test="${ empty loginUser }">
-		        <!-- 로그인전 -->
-				<div id="nav-menu1" class="nav-content">
-				<a href=""></a>
-		        <ul>
-                       <li><a onclick="location.href='views/login/login.jsp'">로그인</a></li>
+             <c:when test="${ empty loginUser }">
+              <!-- 로그인전 -->
+            <div id="nav-menu1" class="nav-content">
+            <a href=""></a>
+              <ul>
+                       <li><a href='<%=contextPath %>/views/login/login.jsp'">로그인</a></li>
                         <hr>
                         <li><a href="">회원가입</a></li>
                     </ul>
                  </div>
                   </c:when>
-		        <c:otherwise>
-		        <!-- 로그인후 -->
-		        <div id="nav-menu2" class="nav-content">
-		        <a href=""></a>
+              <c:otherwise>
+              <!-- 로그인후 -->
+              <div id="nav-menu2" class="nav-content">
+              <a href=""></a>
                     <ul>
                         <li><a href="">마이페이지</a></li>
                         <hr>
