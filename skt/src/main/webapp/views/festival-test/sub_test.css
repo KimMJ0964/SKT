@@ -29,14 +29,15 @@
 
   img{
     border: 0px;
+    
   }
   
   /* main */
   #main{
-    width: 100%; height: 80px;
+    width: 100%; height: 100px;
     background-color: #DFF0FF;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 50px;
     
   }
   #main h3{
@@ -49,27 +50,8 @@
     -webkit-text-stroke: #000000 0.5px;
     padding-top: 30px;
   }
-  .slide_contain{
-    width: 100%; height: 347px;
-    margin-top: 65px;
-  }
-  .slides{
-    width: 1920px;
-    display: flex;
-    margin-left: -315px;
-    transition: transform 0.5s ease;
-  }
-  .slide{
-    min-width: 120%;height: 347px;
-    margin-left: 16px;
-    overflow: hidden;
-  }
-  .slide:last-child{
-    margin-right: 0;
-  }
-  .slide img{
-    width: 100%;height: 347px;
-  }
+
+
   #main #test{
     clear: both;
     font-size: 30px;
@@ -102,6 +84,11 @@
     color: #ffffff;
     font-weight: 800;
   }
+  
+ #main img{
+  margin-top:100px;
+  }
+  
   
   
   /* QnA */

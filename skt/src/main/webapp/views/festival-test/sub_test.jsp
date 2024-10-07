@@ -18,8 +18,10 @@
 <jsp:include page="/views/common/menubar.jsp" />
   <div class="test-container">
     <section id="main">
-      <img src="" alt="">
-      <h3>나와 어울리는 축제는?</h3>
+    <div class="imgbanner">
+      <img src="./img/banner.png" alt="">
+     </div>
+
       
 
       
