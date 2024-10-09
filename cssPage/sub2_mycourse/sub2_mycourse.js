@@ -9,7 +9,7 @@ window.onload = function() {
         actionButtons.classList.add('action-buttons');
 
         const addDayButton = document.createElement('button');
-        addDayButton.textContent = 'N일차';
+        addDayButton.textContent = '다음날';
         addDayButton.classList.add('add-day');
 
         const addCourseButton = document.createElement('button');
@@ -19,9 +19,13 @@ window.onload = function() {
         actionButtons.appendChild(addDayButton);
         actionButtons.appendChild(addCourseButton);
 
-        // .actions 위에 버튼 추가 (수정/삭제 위로 이동)
-        const actionsDiv = document.querySelector('.actions');
-        actionsDiv.parentNode.insertBefore(actionButtons, actionsDiv);
+        // .plus 안에 버튼 추가
+        const plusDiv = document.querySelector('.plus');
+        plusDiv.appendChild(actionButtons);
+
+        // 버튼 스타일 조정
+        actionButtons.style.position = 'absolute';
+
 
         // N일차 버튼을 클릭하면 새로운 day를 추가하는 기능
         addDayButton.addEventListener('click', function() {
@@ -40,6 +44,9 @@ window.onload = function() {
 
             newDay.appendChild(newDayTitle);
             courseDetails.appendChild(newDay);
+
+            // actionButtons 사라지기
+            actionButtons.remove();
         });
 
         // 다음코스 버튼을 클릭하면 time-place를 추가하는 기능
@@ -56,12 +63,14 @@ window.onload = function() {
 
             const placeInput = document.createElement('input');
             placeInput.type = 'text';
-            placeInput.placeholder = '관광지 입력';
+            placeInput.placeholder = '관광지/축제 입력';
 
             timePlaceForm.appendChild(timeInput);
             timePlaceForm.appendChild(placeInput);
 
             lastDay.appendChild(timePlaceForm);
+
+            actionButtons.remove();
 
             // 입력 후 엔터를 누르면 리스트에 추가
             timeInput.addEventListener('keydown', function(event) {
