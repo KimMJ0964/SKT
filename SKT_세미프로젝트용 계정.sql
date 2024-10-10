@@ -209,7 +209,6 @@ ALTER TABLE COURSE
 MODIFY COURSE_NAME VARCHAR2(50);
 -- 이거먼저
 
-INSERT INTO  MEMBER (MEM_ID, MEM_PWD, MEM_NAME, PHONE, ADDRESS, MEM_NO, EMAIL, STATUS, GRADE)
-VALUES ('user01', 'pass01', '홍길동', '010-1234-5678', '서울특별시 예시구 예시동 1-1', '123456-1234567', 'user01@example.com', 'Y', '회원');
+
 
 commit;

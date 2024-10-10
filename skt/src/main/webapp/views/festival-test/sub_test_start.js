@@ -2,7 +2,7 @@ const main = document.querySelector("#main");
 const qna = document.querySelector("#qna");
 const result = document.querySelector("#result");
 const endPoint = 12;
-const select = [0, 0, 0, 0, 0, 0, 0,0];
+const select = [0, 0, 0, 0, 0, 0, 0, 0];
 
 function calResult(){
   var result = select.indexOf(Math.max(...select));
@@ -16,7 +16,7 @@ function setResult(){
 
   var resultImg =document.createElement('img');
   const imgDiv = document.querySelector('#resultImg');
-  var imgURL = './img/img' + point + '.png';
+  var imgURL = './img/img' + point + '.png';                                     
   resultImg.src = imgURL;
   resultImg.alt = point;
   imgDiv.appendChild(resultImg);

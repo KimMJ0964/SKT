@@ -157,6 +157,11 @@ body {
     margin-left: 40px;
 }
 
+#menubar-profile {
+   margin-top: 10px;
+    margin-left: 40px;
+}
+
 #navi>.nav-content>ul a {
     font-size: 20px;
 }
@@ -185,7 +190,7 @@ body {
     border-radius: 40px;
 }
  .nav-wrap  hr{
-	margin:15px;
+   margin:15px;
     width: 80%;
 }
 
@@ -199,31 +204,22 @@ body {
                 <img src="<%=contextPath %>/views/common/img/logo_1.png" alt="로고" onclick href="<%= request.getContextPath() %>/index.jsp"></a></li>
             
                 <li class="nav-content">
-                    <a href="">명소찾기</a>
+                    <a href="<%=contextPath %>/views/sub2_TF/TourFestivalList.jsp">명소찾기</a>
                     <ul>
-                        <li><a href="">지역별</a></li>
+                        <li><a href="">관광지/축제</a></li>
                         <hr>
-                        <li><a href="">테마별</a></li>
+                        <li><a href="<%=contextPath %>/views/sub/festivalMBTI.jsp">축MBTI</a></li>
                     </ul>
                 
-                </li>
-                <li class="nav-content">
-                    <a href="">축제</a>
-                    <ul>
-                        <li><a href="<%=contextPath %>/views/festival-test/sub_test.jsp">MBTI</a></li>
-                        <hr>
-                        <li><a href="">계절별</a></li>
-                        <hr>
-                        <li><a href="">지역별</a></li>
-                        <hr>
-                        <li><a href="">테마별</a></li>
-                    </ul>
                 </li>
                 <li class="nav-content">
                     <a href="">여행코스</a>
                 </li>
                 <li class="nav-content">
-                    <a href="">커뮤니티</a>
+                    <a href="<%=contextPath %>/views/mycourse/mycourse.jsp">나만의 코스</a>
+                </li>
+                <li class="nav-content">
+                    <a href="<%=contextPath %>/board.bo?cpage=1">커뮤니티</a>
                 </li>
 
                 <c:choose>
@@ -231,10 +227,10 @@ body {
               <!-- 로그인전 -->
             <div id="nav-menu1" class="nav-content">
             <a href=""></a>
-              <ul>
-                       <li><a href='<%=contextPath %>/views/login/login.jsp'">로그인</a></li>
+              <ul id="menubar-profile">
+                       <li><a href='<%=contextPath %>/views/login/login.jsp'>로그인</a></li>
                         <hr>
-                        <li><a href="">회원가입</a></li>
+                        <li><a href="<%=contextPath %>/views/member/memberEnrollForm.jsp">회원가입</a></li>
                     </ul>
                  </div>
                   </c:when>
@@ -243,9 +239,7 @@ body {
               <div id="nav-menu2" class="nav-content">
               <a href=""></a>
                     <ul>
-                        <li><a href="">마이페이지</a></li>
-                        <hr>
-                        <li><a href="">장바구니</a></li>
+                        <li><a href="<%=contextPath %>/myPageTest.me">마이페이지</a></li>
                         <hr>
                         <li><a href="<%=contextPath %>/logout.me">로그아웃</a></li>
                     </ul>
@@ -254,5 +248,24 @@ body {
                 </c:choose>
             </ul>
         </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: "getProfileImage.mb", // Servlet 경로
+                type: "GET",
+                dataType: "json",
+                success: function(data) {
+                    // 배경 이미지 설정
+                    $('#nav-menu2').css('background-image', 'url(' + data.filePath + '/' + data.changeName + ')');
+                    $('#nav-menu2').css('background-size', 'cover');  // 이미지가 div 크기에 맞게 조정됨
+                    $('#nav-menu2').css('background-position', 'center');  // 이미지 중앙 배치
+                },
+                error: function(request, status, error) {
+                    console.error("Error fetching profile image: " + error);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
