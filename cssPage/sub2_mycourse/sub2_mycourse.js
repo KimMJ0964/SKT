@@ -26,7 +26,6 @@ window.onload = function() {
         // 버튼 스타일 조정
         actionButtons.style.position = 'absolute';
 
-
         // N일차 버튼을 클릭하면 새로운 day를 추가하는 기능
         addDayButton.addEventListener('click', function() {
             const courseDetails = document.querySelector('.course-details');
@@ -42,8 +41,20 @@ window.onload = function() {
             const newDayTitle = document.createElement('h3');
             newDayTitle.textContent = `${dayCount}일차`;
 
+            // 삭제 아이콘 생성
+            const deleteDayIcon = document.createElement('i');
+            deleteDayIcon.classList.add('fas', 'fa-times', 'delete-icon');
+            deleteDayIcon.style.cursor = 'pointer';
+
+            // 일차 제목 옆에 삭제 아이콘 추가
+            newDayTitle.appendChild(deleteDayIcon);
             newDay.appendChild(newDayTitle);
             courseDetails.appendChild(newDay);
+
+            // 삭제 아이콘 클릭 시 일차 삭제 기능
+            deleteDayIcon.addEventListener('click', function() {
+                newDay.remove();
+            });
 
             // actionButtons 사라지기
             actionButtons.remove();
@@ -52,6 +63,11 @@ window.onload = function() {
         // 다음코스 버튼을 클릭하면 time-place를 추가하는 기능
         addCourseButton.addEventListener('click', function() {
             const lastDay = document.querySelector('.course-details .day:last-child');
+
+            if (!lastDay) {
+                alert('먼저 "다음날"을 추가하세요.');
+                return;
+            }
 
             // 시간과 관광지를 입력할 폼 생성
             const timePlaceForm = document.createElement('div');
@@ -65,14 +81,26 @@ window.onload = function() {
             placeInput.type = 'text';
             placeInput.placeholder = '관광지/축제 입력';
 
+            // 삭제 아이콘 생성
+            const deleteCourseIcon = document.createElement('i');
+            deleteCourseIcon.classList.add('fas', 'fa-times', 'delete-icon');
+            deleteCourseIcon.style.cursor = 'pointer';
+
+            // 시간과 관광지 폼, 삭제 아이콘을 함께 추가
             timePlaceForm.appendChild(timeInput);
             timePlaceForm.appendChild(placeInput);
+            timePlaceForm.appendChild(deleteCourseIcon);
 
             lastDay.appendChild(timePlaceForm);
 
+            // 삭제 아이콘 클릭 시 해당 코스 삭제 기능
+            deleteCourseIcon.addEventListener('click', function() {
+                timePlaceForm.remove();
+            });
+
             actionButtons.remove();
 
-            // 입력 후 엔터를 누르면 리스트에 추가
+            // 시간 입력 후 엔터를 누르면 텍스트로 변경
             timeInput.addEventListener('keydown', function(event) {
                 if (event.key === 'Enter') {
                     const timeText = document.createElement('p');
@@ -81,6 +109,7 @@ window.onload = function() {
                 }
             });
 
+            // 관광지 입력 후 엔터를 누르면 텍스트로 변경
             placeInput.addEventListener('keydown', function(event) {
                 if (event.key === 'Enter') {
                     const placeText = document.createElement('p');
