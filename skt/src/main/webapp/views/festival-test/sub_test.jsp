@@ -61,7 +61,7 @@
         <h1><b>축제를 즐기러 가볼까요?</b></h1>
         <button onclick ="location.href='#'">당신과 맞는 축제</button>
       </div>
-      <button type="button" class="return">테스트 다시하기</button>
+      <button type="button" class="return" onclick="location.href='<%=contextPath %>/views/festival-test/sub_test.jsp'">테스트 다시하기</button>
     </section>
     <script src="./sub_test.js"></script>
     <script src="./sub_test_data.js" charset="utf-8"></script>

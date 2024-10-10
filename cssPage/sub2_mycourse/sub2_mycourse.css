@@ -251,14 +251,16 @@ header h1 {
 }
 
 .delete-icon {
-    font-size: 20px; /* 아이콘 크기 */
-    color: #5a5a5a; /* 아이콘 색상 (빨간색) */
-    margin-left: 10px; /* 아이콘과 텍스트 사이 간격 */
-    cursor: pointer; /* 커서를 포인터로 변경 */
-    transition: color 0.3s ease; /* 호버 시 색상 변경 효과 */
+    font-size: 20px;
+    color: #5a5a5a; 
+    margin-left: 10px; 
+    cursor: pointer; 
+    transition: color 0.3s ease; 
+    display: flex;
+    align-items: center;
 }
 
 .delete-icon:hover {
-    color: #cc0000; /* 호버 시 색상 변경 */
+    color: #fd6d6d; 
 }
 
