@@ -58,7 +58,7 @@
             </table>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="./TourFestivalList-area.js"></script>
+        <script src="./views/sub2_TF/TourFestivalList-area.js"></script>
            <div id="search">
                 <input type="submit" value="검색">
            </div>
@@ -70,64 +70,56 @@
             <label for="cf">축제</label>
         </div>
         
-        <div id="content-box">
+        <div id="content-box" style="height: fit-content;">
             <div class="list-box" id="tour-content">
-            <c:forEach var="t" items="${list}">
+            <c:forEach var="t" items="${Tlist}">
                 <div id="list-con">
                     <div id="list-img"><img src="./views/resource/tour/tourThumbnail/${ t.tourImg}" style="height: 300px; width: 300px;"></div>
                     <h3>${t.tourName}</h3>
                     <div id="under-area">
                         <h5>${t.tourArea}</h5>
+                        <button type="button" onclick="toggleLike(${t.tourNo}, this)">
+						    <img src="./views/sub2_TF/img/Like.png" id="like-img-${t.tourNo}">
+						</button>
+                    </div>
+                </div>
+            </c:forEach>         
+            </div>
+            <script>
+	            function toggleLike(tourNo, button) {
+	                const likeImg = button.querySelector('img'); // 버튼 내의 이미지 요소
+	                const isLiked = likeImg.src.includes("Like_r.png"); // 현재 상태 확인
+	
+	                const action = isLiked ? "unlike" : "like"; // 상태에 따라 액션 설정
+	
+	                $.ajax({
+	                    url: '/skt/tourfestivallist.tf', // 요청할 URL
+	                    method: 'POST', // 요청 방식
+	                    data: { action: action, tourNo: tourNo }, // 전달할 데이터
+	                    success: function(response) {
+	                        // 서버 응답이 성공하면 이미지 변경
+	                        likeImg.src = isLiked ? "./views/sub2_TF/img/Like.png" : "./views/sub2_TF/img/Like_r.png";
+	                    },
+	                    error: function() {
+	                        alert('좋아요 상태를 변경하는 데 실패했습니다.');
+	                    }
+	                });
+	            }
+            </script>
+        
+            <div class="list-box" id="festival-content" style="display: none;">
+            <c:forEach var="f" items="${Flist}">
+                <div id="list-con">
+                    <div id="list-img"><img src="./views/resource/festival/${ f.fsImg}" style="height: 300px; width: 300px;"></div>
+                    <h3>${f.fsName}</h3>
+                    <div id="under-area">
+                        <h5>${f.fsArea}</h5>
                         <button type="button">
                             <img src="./views/sub2_TF/img/Like.png" class="like(this)" onclick="like(this)">
                         </button>
                     </div>
                 </div>
             </c:forEach>
-            </div>
-            
-        
-            <div class="list-box" id="festival-content" style="display: none;">
-                <div id="list-con">
-                    <div id="list-img"></div>
-                    <h3>축 이름 1</h3>
-                    <div id="under-area">
-                        <h5>관광지 위치 1</h5>
-                        <button type="button">
-                            <img src="./img/Like.png" class="like(this)" onclick="like(this)">
-                        </button>
-                    </div>
-                </div>
-                <div id="list-con">
-                    <div id="list-img"></div>
-                    <h3>축 이름 1</h3>
-                    <div id="under-area">
-                        <h5>관광지 위치 1</h5>
-                        <button type="button">
-                            <img src="./img/Like.png" class="like" onclick="like(this)">
-                        </button>
-                    </div>
-                </div>
-                <div id="list-con">
-                    <div id="list-img"></div>
-                    <h3>축 이름 1</h3>
-                    <div id="under-area">
-                        <h5>관광지 위치 1</h5>
-                        <button type="button">
-                            <img src="./img/Like.png" class="like" onclick="like(this)">
-                        </button>
-                    </div>
-                </div>
-                <div id="list-con">
-                    <div id="list-img"></div>
-                    <h3>축 이름 1</h3>
-                    <div id="under-area">
-                        <h5>관광지 위치 1</h5>
-                        <button type="button">
-                            <img src="./img/Like.png" class="like" onclick="like(this)">
-                        </button>
-                    </div>
-                </div>
             </div>
         </div>
     
@@ -141,14 +133,14 @@
                 });
             });
     
-            // 좋아요 버튼 클릭 시 해당 이미지 변경
-            function like(element) {
-                if (element.src.includes("Like_r.png")) {
-                    element.src = "./views/sub2_TF/img/Like.png";
-                } else {
-                    element.src = "./views/sub2_TF/img/Like_r.png";
-                }
-            }
+            // // 좋아요 버튼 클릭 시 해당 이미지 변경
+            // function like(element) {
+            //     if (element.src.includes("Like_r.png")) {
+            //         element.src = "./views/sub2_TF/img/Like.png";
+            //     } else {
+            //         element.src = "./views/sub2_TF/img/Like_r.png";
+            //     }
+            // }
         </script>
     </div>
 </body>

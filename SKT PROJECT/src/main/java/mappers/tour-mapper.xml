@@ -29,6 +29,17 @@
 			   TOUR_SEASON,
 			   TOUR_IMG
 		  FROM TOURIST
-		 ORDER BY TOUR_NO DESC
+		 ORDER BY TOUR_NO ASC
 	</select>
+	
+	<update id="increaseTourLike">
+		UPDATE TOURIST
+		   SET TOUR_LIKE = TOUR_LIKE + 1
+		 WHERE TOUR_NO = #{tourNo}
+	</update>
+	<update id="decreaseTourLike">
+		UPDATE TOURIST
+		SET TOUR_LIKE = TOUR_LIKE - 1
+		WHERE TOUR_NO = #{tourNo}
+	</update>
 </mapper>

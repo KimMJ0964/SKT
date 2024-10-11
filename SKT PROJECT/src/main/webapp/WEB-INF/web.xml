@@ -313,4 +313,12 @@
     <servlet-name>tourfestivallist.tf</servlet-name>
     <url-pattern>/tourfestivallist.tf</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>tourFestivalListServlet</servlet-name>
+    <servlet-class>com.skt.tourfestival.controller.TourFestivalListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>tourFestivalListServlet</servlet-name>
+    <url-pattern>/tourFestival/loadMoreData</url-pattern>
+  </servlet-mapping>
 </web-app>

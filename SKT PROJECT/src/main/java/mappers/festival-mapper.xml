@@ -1,1 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="festivalMapper">
+	<resultMap id="festivalResultSet" type="FestivalList">
+		<result column="FS_NO" property="fsNo" />
+		<result column="FS_NAME" property="fsName" />
+		<result column="FS_AREA" property="fsArea" />
+		<result column="FS_SEASON" property="fsSeason" />
+		<result column="FS_TEMA" property="fsTema" />
+		<result column="FS_IMG" property="fsImg" />
+		<result column="FS_URL" property="fsUrl" />
+		<result column="FS_DCT" property="FsDct" />
+		<result column="FS_LIKE" property="fsLike" />
+		<result column="FS_LAT" property="fsLat" />
+		<result column="FS_LONG" property="fsLong" />
+		<result column="fs_start" property="fsStart" javaType="java.util.Date"/>
+		<result column="FS_END" property="fsEnd" javaType="java.util.Date"/>
+	</resultMap>	
+	
+	<select id="selectListCount" resultType="_int">
+		SELECT COUNT(*)
+		  FROM FESTIVAL
+	</select>
+	<select id="selectList" resultMap="festivalResultSet">
+		SELECT FS_NO,
+			   FS_NAME,
+			   FS_AREA,
+			   FS_SEASON,
+			   FS_TEMA,
+			   FS_IMG
+		  FROM FESTIVAL
+		 ORDER BY FS_NO ASC
+	</select>
+</mapper>

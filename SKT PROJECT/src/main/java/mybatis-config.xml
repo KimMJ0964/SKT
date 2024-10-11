@@ -21,6 +21,8 @@
   	<typeAlias type="com.skt.member.model.vo.MemberProfileImg" alias="MemberProfileImg" />
   	<typeAlias type="com.skt.member.model.vo.Interested" alias="Interested" />
   	<typeAlias type="com.skt.tourfestival.model.vo.Tour" alias="Tour" />
+  	<typeAlias type="com.skt.tourfestival.model.vo.Festival" alias="FestivalList" />
+  	
   	
   </typeAliases>
 
@@ -52,6 +54,7 @@
     <mapper resource="/mappers/member-mapper.xml"/>
     <mapper resource="/mappers/board-mapper.xml"/>
     <mapper resource="/mappers/tour-mapper.xml" />
+    <mapper resource="/mappers/festival-mapper.xml" />
     <mapper resource="/mappers/mainPage-mapper.xml"/>
   </mappers>
 </configuration>

@@ -3,6 +3,7 @@ package com.skt.tourfestival.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import com.skt.tourfestival.model.vo.Festival;
 import com.skt.tourfestival.model.vo.Tour;
 import com.skt.tourfestival.service.TourFestivalService;
 import com.skt.tourfestival.service.TourFestivalServiceImpl;
@@ -39,20 +40,46 @@ public class TourFestivalListController extends HttpServlet {
         int currentPage = Integer.parseInt(request.getParameter("cpage"));
         int listCount = tfService.selectListCount(); //총 게시글 수
         
-        PageInfo pi = Template.getPageInfo(listCount, currentPage, 12, 3);
+        PageInfo pi = Template.getPageInfo(listCount, currentPage, 3, 61);
         
-        ArrayList<Tour> list = tfService.selectList(pi);
-        System.out.println(list);
-        request.setAttribute("list", list);
+        //관광지 리스트
+        ArrayList<Tour> Tlist = tfService.selectList(pi);
+        System.out.println(Tlist);
+        request.setAttribute("Tlist", Tlist);
+        request.setAttribute("pi", pi);
+        
+        //축제 리스트
+        ArrayList<Festival> Flist = tfService.selectFList(pi);
+        System.out.println(Flist);
+        request.setAttribute("Flist", Flist);
         request.setAttribute("pi", pi);
         
         request.getRequestDispatcher("views/sub2_TF/TourFestivalList.jsp").forward(request, response);
+        
+     
     }
 
     /**
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
+//        doGet(request, response);
+    	TourFestivalService tfService = new TourFestivalServiceImpl();
+    	
+    	//AJAX요청에서 action, tourNo 파라미터 가져오기
+    	String action = request.getParameter("action");
+    	int tourNo = Integer.parseInt(request.getParameter("tourNo"));
+    	
+    	//좋아요 기능
+    	if("like".equals(action)) {
+    		tfService.likeTour(tourNo); // TOUR_LIKE 증가
+    	} else if("unlike".equals(action)){
+    		tfService.unlikeTour(tourNo); //TOUR_LIKE 감소
+    	}
+    	
+    	//JSON 응답 전송
+    	response.setContentType("application/json");
+    	response.setCharacterEncoding("UTF-8");
+    	response.getWriter().write("{ \"result\": \"success\" }");
     }
 }
