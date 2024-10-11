@@ -6,7 +6,7 @@ public class Member {
 	private String memName;
 	private String phone;
 	private String address;
-	private int memNo;
+	private String memNo;
 	private String email;
 	private String status;
 	private String grade;
@@ -14,8 +14,8 @@ public class Member {
 	public Member() {
 		super();
 	}
-
-	public Member(String memId, String memPwd, String memName, String phone, String address, int memNo, String email,
+	
+	public Member(String memId, String memPwd, String memName, String phone, String address, String memNo, String email,
 			String status, String grade) {
 		super();
 		this.memId = memId;
@@ -29,7 +29,32 @@ public class Member {
 		this.grade = grade;
 	}
 	
+	public Member(String memId, String memName, String phone, String address, String memNo, String email) {
+		super();
+		this.memId = memId;
+		this.memName = memName;
+		this.phone = phone;
+		this.address = address;
+		this.memNo = memNo;
+		this.email = email;
+	}
 	
+	public Member(String memId, String memPwd, String memName, String phone, String address, String memNo, String email) {
+		super();
+		this.memId = memId;
+		this.memPwd = memPwd;
+		this.memName = memName;
+		this.phone = phone;
+		this.address = address;
+		this.memNo = memNo;
+		this.email = email;
+	}
+	
+	public Member(String memId, String memPwd) {
+		super();
+		this.memId = memId;
+		this.memPwd = memPwd;
+	}
 	public String getMemId() {
 		return memId;
 	}
@@ -70,11 +95,11 @@ public class Member {
 		this.address = address;
 	}
 
-	public int getMemNo() {
+	public String getMemNo() {
 		return memNo;
 	}
 
-	public void setMemNo(int memNo) {
+	public void setMemNo(String memNo) {
 		this.memNo = memNo;
 	}
 
@@ -108,8 +133,4 @@ public class Member {
 				+ ", address=" + address + ", memNo=" + memNo + ", email=" + email + ", status=" + status + ", grade="
 				+ grade + "]";
 	}
-	
-	
-	
-	
 }

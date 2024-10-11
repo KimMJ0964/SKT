@@ -1,161 +1,114 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%
+	String contextPath = request.getContextPath();
+%>
 <!DOCTYPE html>
-<html>
+<html> 
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<style>
-	/*menubar*/
-	ul, li, ol {
-	    list-style: none;
-	    padding: 0px;
-	    margin: 0px;
-	}
-	
-	a {
-	    text-decoration: none;
-	    color: black;
-	}
-	
-	
-	#navigator {
-	    margin-top: 20px;
-	    margin-left: 80px;
-	    width: 1280px;
-	    height: 90px;
-	       
-	    
-	}
-	
-	#navi {
-	    border: solid none;
-	    background-color: white;
-	    height: 100%;
-	    border-radius: 15px;
-	    display: flex;
-	    justify-content: center;
-	    align-items: center;
-	}
-	
-	#navi>li {
-	    float: left;
-	    width: 19%;
-	    text-align: center;
-	    height: 100%;
-	}
-	
-	#navi a {
-	    font-size: 24px;
-	    font-weight: 900;
-	    width: 100%;
-	    height: 100%;
-	    display: block;
-	    line-height: 36px;
-	}
-	
-	#menu {
-	    border: solid none;
-	    width: 55px;
-	    height: 55px;
-	    border-radius: 50%;
-	    background-color: #D9D9D9;
-	    margin-bottom: 55px;
-	    margin-right: 28px;
-	}
-	
-	.content{
-	    margin-top: 60px;
-	}
-	
-	.icon{
-	    width: 100px;  
-	    height: auto;
-	    margin-top: 10px;
-	}
-	
-	#navi a:hover {
-	    color: #868686;
-	    scale: 1.08;
-	}
-	
-	#navi>.content>ul {
-	    display: none;
-	}
-	
-	#navi>.content>ul a {
-	    font-size: 20px;
-	}
-	
-	#navi>.content>a:hover+ul {
-	    display: block;
-	    width: 160px;
-	    text-align: center;
-	    border: solid #FFC2E2;
-	    background-color: white;
-	    position: relative;
-	    z-index: 1;
-	    border-radius: 40px;
-	
-	}
-	
-	
-	#navi>.content>ul:hover {
-	    display: block;
-	    text-align: center;
-	    width: 160px;
-	    border: solid #FFC2E2;
-	    background-color: white;
-	    position: relative;
-	    z-index: 1;
-	    border-radius: 40px;
-	}
-</style>
+<title>회원가입</title>
+<link rel="stylesheet" href="<%=contextPath %>/views/member/css/memberEnrollForm.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-	
-	<!-- 로그인 전 -->
-	<div id="navigator">
-            <ul id="navi">
-                <li><img class="icon" src="icon.png" alt="없음"></li>
-                <li class="content">
-                    <a href="">명소찾기</a>
-                    <ul>
-                        <li><a href="">지역별</a></li>
-                        <hr>
-                        <li><a href="">테마별</a></li>
-                    </ul>
-                
-                </li>
-                <li class="content">
-                    <a href="">축제</a>
-                    <ul>
-                        <li><a href="">MBTI</a></li>
-                        <hr>
-                        <li><a href="">계절별</a></li>
-                        <hr>
-                        <li><a href="">지역별</a></li>
-                        <hr>
-                        <li><a href="">테마별</a></li>
-                    </ul>
-                </li>
-                <li class="content">
-                    <a href="">여행코스</a>
-                </li>
-                <li class="content">
-                    <a href="">커뮤니티</a>
-                </li>
-                <div id="menu" class="content">
-                    <a href=""></a>
-                    <ul>
-                        <li><a href="">마이페이지</a></li>
-                        <hr>
-                        <li><a href="">장바구니</a></li>
-                        <hr>
-                        <li><a href="">로그아웃</a></li>
-                    </ul>
-                </div>
-            </ul>
+<jsp:include page="/views/common/menubar.jsp" /> 
+<br><br><br>
+    <div class="content">
+        <form action="<%=contextPath %>/insert.me" method="post" id="join-member">
+            <h1>회원가입</h1>
+            <p>아이디</p>
+            <div>
+	            <input type="text" name="memId" id="insertId" required>
+	            <button type="button" onclick="idCheck()" id="checkBtn">중복확인</button>
+	        </div>
+            <p>비밀번호</p>
+            <input type="password" name="memPwd" required> 
+            <p>비밀번호 재입력</p>
+            <input type="password" name="memPwdCheck" required>
+            <p>이름</p>
+            <input type="text" name="memName" required>
+            <p>전화번호</p>
+            <input type="text" name="phone" required>
+            <p>주소</p>
+            <input type="text" name="address" required>
+            <p>주민등록번호</p>
+            <input type="text" name="memNo" required>
+            <p>이메일</p>
+            <div class="email" required>
+            <input type="hidden" name="email" >
+            <input type="text" id="emailId">
+            <select name="emailDomain" id="emailDomain">
+                <option name="email">@naver.com</option>
+                <option name="email">@gmail.com</option>
+            </select>
         </div>
+            <div class="button-container">
+                <input type="reset" value="초기화">
+                <input type="submit" value="계정생성" onclick="return handleSubmit()">
+            </div>
+        </form>
+    </div>
+     <jsp:include page="/views/common/footer.jsp" />
+    <script>
+    	function insertEmail(){
+    		$("#join-member input[name=email]").val($("#emailId").val() + $("#emailDomain").val())
+    	}
+    	
+    	function checkPwd() {
+        const pwd = document.querySelector("#join-member input[name=memPwd]").value;
+        const pwdCheck = document.querySelector("#join-member input[name=memPwdCheck]").value;
+
+        if (pwd !== pwdCheck) {
+            alert("비밀번호가 일치하지 않습니다.");
+            return false;
+        }
+        return true; // 비밀번호가 일치하면 true를 반환
+        }
+
+        function handleSubmit() {
+            // 이메일을 삽입
+            insertEmail();
+            // 비밀번호 확인
+            return checkPwd(); // 비밀번호가 일치하면 true, 아니면 false
+        }
+        
+        function idCheck(){
+        	console.log("함수 실행")
+           //중복확인버튼 클릭시 사용자가 입력한 아이디값을 서버에 보내서 조회요청 -> 응답받기
+            //1) 사용불가 -> alert메세지출력(이미 존재하는 아이디입니다.)
+            //2) 사용가능 -> 진짜사용할거니? ->  ok : 더이상아이디 수정못하게
+            //                                 no : 다시 입력하도록 유도
+
+            const idInput = document.querySelector("input[name=memId]");
+            console.log(idInput)
+
+            $.ajax({
+                type : "get",
+                url: "<%=contextPath%>/idCheck.me",
+                data : {
+                    checkId : idInput.value
+                }, 
+                success : function(result){
+                    if(result === "NNNNY") {
+                        if(confirm("사용가능한 아이디입니다. 정말 사용하시겠습니까? ")){
+                            idInput.setAttribute("readonly", true);
+
+                            const subminBtn = document.querySelector("input[type=submit]");
+                            subminBtn.removeAttribute("disabled");
+                        } else {
+                            idInput.focus();
+                        }
+                    } else {
+                        alert("사용불가능한 아이디입니다.");
+                        idInput.focus();
+                    }
+                },
+                error : function(err){
+                    console.log("실패 : ", err)
+                }
+            })
+        }
+    </script>
 </body>
 </html>

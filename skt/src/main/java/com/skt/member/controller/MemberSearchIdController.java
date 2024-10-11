@@ -1,15 +1,14 @@
 package com.skt.member.controller;
 
+import java.io.IOException;
+
+import com.skt.member.service.MemberService;
+import com.skt.member.service.MemberServiceImpl;
+
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
-
-import com.skt.member.model.vo.Member;
-import com.skt.member.service.MemberService;
-import com.skt.member.service.MemberServiceImpl;
 
 /**
  * Servlet implementation class MemberSearchIdController

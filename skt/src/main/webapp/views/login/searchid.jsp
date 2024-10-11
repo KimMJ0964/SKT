@@ -8,10 +8,11 @@
 <head>
 <meta charset="UTF-8">
 <title>아이디 찾기</title>
-<link rel="stylesheet" href="<%=contextPath %>/views/login/searchid.css">
+<link rel="stylesheet" href="./views/login/css/searchid.css">
 </head>
 <body>
 <jsp:include page="/views/common/menubar.jsp" /> 
+<br><br><br>
     <div class="container">
         <form action="<%=contextPath %>/searchId.me"  method="post">
             <img src="<%=contextPath %>/views/login/img/logo_1.png" alt="로고">
@@ -21,5 +22,6 @@
             <button type="submit">아이디 찾기</button>
         </form>
     </div>
+     <jsp:include page="/views/common/footer.jsp" />
 </body>
 </html>
