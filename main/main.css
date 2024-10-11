@@ -1,0 +1,144 @@
+
+body {
+    background-color: #DFF0FF;
+}
+.tab_content {
+    width: 1330px; height: 610px;
+    position:absolute;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+}
+input[type="radio"] {
+    display:none;
+}
+input[type="radio"] + label {
+    width: 296px; height: 40px;
+    display:inline-block;
+    padding: 20px 15px;
+    background:#FFC2E2;
+    color:#000;
+    font-weight: 800;
+    line-height: 40px;
+    font-size:24px;
+    text-align: center;
+    cursor:pointer;
+    border-radius: 10px 10px 0 0;
+}
+input[type="radio"]:checked + label {
+    background:#fff;
+    color:#000;
+}
+
+.conbox {
+    width:1321px; height:inherit;
+    background:#fff;
+    margin: 0;
+    display:none;
+    /* border: 1px #000 solid; */
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 12px 12px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+input[id="tab01"]:checked ~ .con1 {display:block;}
+input[id="tab02"]:checked ~ .con2 {display:block;}
+input[id="tab03"]:checked ~ .con3 {display:block;}
+input[id="tab04"]:checked ~ .con4 {display:block;}
+
+/* 추천 관광명소 */
+.con1 > h1{
+    padding-bottom: 11px;
+}
+#pop-tour{
+    width: 100%; height: 544px;
+}
+#tour-area01{
+    width: 100%; height: 49%;
+}
+
+
+#first-tour{
+    width: 48%; height: 100%;
+    float: left;
+}
+#second-tour{
+    width: 48%; height: 100%;
+    margin-right: 30px;
+    float: right;
+}
+.up-line01{
+    width: 90%; height: 250px;
+    float: right;
+}
+.photo01{
+    width: 305px;
+    float: right;
+}
+.desc01{
+    width: 40%;
+    text-align: right;
+    padding-right: 10px;
+    float: right;
+}
+.under-line01{
+    width: 90%; height: 22px;
+    background-color: #FFC2E2;
+    float: right;
+}
+
+#tour-area02{
+    width: 100%; height: 49%;
+    margin-top: 1%;
+}
+#third-tour{
+    width: 48%; height: 100%;
+    float: right;
+}
+#fourth-tour{
+    width: 48%; height: 100%;
+    float: right;
+}
+.up-line02{
+    width: 90%; height: 250px;
+    float: left;
+}
+.photo02{
+    width: 305px;
+    float: left;
+}
+.desc02{
+    width: 40%;
+    text-align: left;
+    padding-left: 10px;
+    float: left;
+}
+.under-line02{
+    width: 90%; height: 22px;
+    background-color: #FFC2E2;
+    float: left;
+}
+.under-line02{
+    width: 90%; height: 22px;
+    background-color: #FFC2E2;
+    float: left;
+}
+
+/* 인기축제 */
+.group {
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .item {
+    width: 10vw;
+    height: 58vh;
+    background-position: center;
+    background-size: 50vh;
+    margin: 1vw;
+    border-radius: 3vw;
+    display: inline-block;
+    cursor: pointer;
+  }
