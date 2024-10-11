@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="tourMapper">
+	<resultMap id="tourResultSet" type="Tour">
+		<result column="TOUR_NO" property="tourNo" />
+		<result column="TOUR_NAME" property="tourName" />
+		<result column="TOUR_AREA" property="tourArea" />
+		<result column="TOUR_TEMA" property="tourTema" />
+		<result column="TOUR_SEASON" property="tourSeason" />
+		<result column="TOUR_IMG" property="tourImg" />
+		<result column="TOUR_THUMBNAIL" property="tourThumnail" />
+		<result column="TOUR_LIKE" property="tourLike" />
+		<result column="TOUR_LAT" property="tourLat" />
+		<result column="TOUR_LONG" property="tourLong" />
+	</resultMap>	
+	
+	<select id="selectListCount" resultType="_int">
+		SELECT COUNT(*)
+		  FROM TOURIST
+	</select>
+	<select id="selectList" resultMap="tourResultSet">
+		SELECT TOUR_NO,
+			   TOUR_NAME,
+			   TOUR_AREA,
+			   TOUR_TEMA,
+			   TOUR_SEASON,
+			   TOUR_IMG
+		  FROM TOURIST
+		 ORDER BY TOUR_NO DESC
+	</select>
+</mapper>

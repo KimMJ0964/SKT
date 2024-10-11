@@ -1,0 +1,391 @@
+@font-face {
+	font-family: 'NanumSquareRound';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff')
+		format('woff');
+	font-weight: bolder;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'nanumL';
+	src: url('font/NanumSquareRoundL.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'nanumR';
+	src: url('font/NanumSquareRoundR.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'nanumB';
+	src: url('font/NanumSquareRoundB.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'nanumEB';
+	src: url('font/NanumSquareRoundEB.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	margin: 0 auto;
+	padding: 0 auto;
+	font-family: 'NanumSquareRound';
+}
+.hiperlink-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* 섹션 간의 간격 조절 */
+}
+
+.hiperlink {
+    display: flex;
+    gap: 20px; /* iframe 간의 간격 조절 */
+}
+.tab_content {
+	width: 1600px;
+	height: 610px;
+	position: absolute;
+	top: 170%;
+	left: 57%;
+	transform: translate(-50%, -50%);
+}
+
+input[type="radio"] {
+	display: none;
+}
+
+input[type="radio"]+label {
+	width: 327px;
+	height: 55px;
+	display: inline-block;
+	padding: 10px;
+	background: #FFC2E2;
+	color: #000;
+	font-weight: 800;
+	line-height: 40px;
+	font-size: 24px;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 10px 10px 0 0;
+}
+
+input[type="radio"]:checked+label {
+	background: #fff;
+	color: #000;
+}
+
+.conbox {
+	width: 1321px;
+	height: inherit;
+	background: #fff;
+	margin: 0;
+	display: none;
+	/* border: 1px #000 solid; */
+	text-align: center;
+	border-radius: 0 0 10px 10px;
+	box-shadow: 12px 12px 10px rgba(0, 0, 0, 0.2);
+}
+
+input[id="tab01"]:checked ~ .con1 {
+	display: block;
+}
+
+input[id="tab02"]:checked ~ .con2 {
+	display: block;
+}
+
+input[id="tab03"]:checked ~ .con3 {
+	display: block;
+}
+
+input[id="tab04"]:checked ~ .con4 {
+	display: block;
+}
+
+/* 추천 관광명소 */
+#pop-tour{
+    width: 100%; height: 544px;
+}
+#tour-area01{
+    width: 100%; height: 49%;
+}
+
+
+#first-tour{
+    width: 48%; height: 100%;
+    float: left;
+}
+#second-tour{
+    width: 48%; height: 100%;
+    margin-right: 30px;
+    float: right;
+}
+.up-line01{
+    width: 90%; height: 200px;
+    float: right;
+}
+.photo01{
+    width: 305px;
+    float: right;
+}
+.desc01{
+    width: 40%;
+    text-align: right;
+    padding-right: 10px;
+    float: right;
+}
+.under-line01{
+    width: 90%; height: 22px;
+    background-color: #FFC2E2;
+    float: right;
+}
+
+#tour-area02{
+    width: 100%; height: 49%;
+    margin-top: 1%;
+}
+#third-tour{
+    width: 48%; height: 100%;
+    float: right;
+}
+#fourth-tour{
+    width: 48%; height: 100%;
+    float: right;
+}
+.up-line02{
+    width: 90%; height: 200px;
+    float: left;
+}
+.photo02{
+    width: 305px;
+    float: left;
+}
+.desc02{
+    width: 40%;
+    text-align: left;
+    padding-left: 10px;
+    float: left;
+}
+.under-line02{
+    width: 90%; height: 22px;
+    background-color: #FFC2E2;
+    float: left;
+}
+.under-line02{
+    width: 90%; height: 22px;
+    background-color: #FFC2E2;
+    float: left;
+}
+
+/* 인기축제 */
+.group {
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.item {
+	width: 10vw;
+	height: 58vh;
+	background-position: center;
+	background-size: 50vh;
+	margin: 1vw;
+	border-radius: 3vw;
+	display: inline-block;
+	cursor: pointer;
+}
+
+/* 인기축제 */
+.group {
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-top: 30px;
+  }
+  
+  .item {
+    width: 10vw;
+    height: 58vh;
+    background-position: center;
+    background-size: 50vh;
+    margin: 1vw;
+    border-radius: 3vw;
+    display: inline-block;
+    cursor: pointer;
+    border: 2px solid #000;
+    overflow: hidden;
+  }
+
+  .item > .img-con{
+    width: 520px; height: 250px;
+    margin: 0 auto;
+    margin-top: 25px;
+    border-radius: 40px 40px 0 0;
+    background-color: #ccc;
+  }
+  .item > .text-con{
+    margin-top: 20px;
+  }
+  .item > .text-con > h3, h5{
+    margin-top: 20px;
+  }
+
+  /* mbti 테스트  */
+  #test-img{
+    width: 1200px; height: 300px;
+    /* padding-top: 30px; */
+    background-color: #ccc;
+  }
+  .con3 > h1{
+    margin-top: 50px;
+    font-size: 40px;
+    font-weight: 800;
+  }
+  .con3 > button{
+    width: 410px; height: 80px;
+    margin-top: 70px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 800;
+    border: none;
+    border-radius: 20px;
+    background-color: #FFC2E2;
+  }
+  .con3 > button:hover{
+    background-color: #f899ca;
+  }
+
+  /* 지역룰렛 */
+  .con4 > h1{
+    padding-top: 50px;
+    font-size: 40px;
+    font-weight: 800;
+  }
+  .con4 > button{
+    width: 410px; height: 80px;
+    margin-top: 50px;
+    color: #fff;
+    font-size: 35px;
+    border: none;
+    border-radius: 20px;
+    background-color: #FFC2E2;
+  }
+  .con4 > button:hover{
+    background-color: #f899ca;
+  }
+  .con4 > #area-result{
+    width: 460px; height: 50px;
+    margin-top: 70px;
+    padding-left: 40px;
+    border-bottom: solid 3px #FFC2E2;
+    overflow: hidden;
+  }
+  .con4 > #area-result > p{
+    width: 120px; height: 50px;
+    margin: 0;
+    margin-left: 100px;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 50px;
+    text-align: center;
+    float: left;
+  }
+  .con4 > #area-result > h1{
+    width: 40%;
+    text-align: right;
+    font-size: 30px;
+    font-weight: 800;
+    float: right;
+  }
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #ADE8F4;
+	height: 2800px;
+	background: linear-gradient(to bottom, #ADE8F4 70%, #FFC2E2 100%);
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 50px;
+  	flex-direction: column; /* 요소를 수직으로 정렬 */
+}
+
+.map-sidebar-container {
+  margin-top: 100px;
+  display: flex;      /* 수평 정렬 */
+  justify-content: space-between; /* 필요에 따라 공간 분배 */
+}
+/* 지도 영역 스타일 */
+#map {
+	width: 500px;
+	height: 400px;
+	border: 5px solid #6FBAFF;
+	border-radius: 10px;
+}
+/* 관광 명소 리스트 영역 스타일 */
+.sidebar {
+	margin-left: 30px;
+	padding: 20px;
+	width: 300px;
+	height: 400px;
+}
+/* 인기 관광 명소 목록 스타일 */
+#topTouristsList {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	border-top: none;
+	border-radius: 0 0 10px 10px;
+	height: 270px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-left: 10px;
+}
+
+#topTouristsList li{
+	font-size: 25px;
+	margin-left: 50px;
+}
+
+.popular-list li {
+	font-size: 20px;
+	padding: 5px 0;
+	border-bottom: 1px solid #ddd;
+}
+
+.popular-list li:last-child {
+	border-bottom: none;
+}
+
+.footer-link {
+	text-align: right;
+	padding-right: 10px;
+	margin-top: 10px;
+	font-size: 14px;
+}
+
+.footer-link a {
+	text-decoration: none;
+	color: #4682B4;
+}
+
+.nav-wrap {
+	background: linear-gradient(to bottom, #ADE8F4 70%, #FFC2E2 100%);
+}
+
+#bottom-login-btn {
+	
+}

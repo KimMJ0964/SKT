@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace : 해당 mapper 파일의 고유한 별칭 -->
+<mapper namespace="mainPageMapper">
+
+	<resultMap type="Tourist" id="TouristResultSet">
+		<!-- <result column = "테이블 컬럼명" property="객체의 필드명"/> -->
+		<result column="TOUR_NO" property="tourNo" />
+		<result column="TOUR_NAME" property="tourName" />
+		<result column="TOUR_FILED" property="tourFiled" />
+		<result column="TOUR_TEMA" property="tourTema" />
+		<result column="TOUR_SEASON" property="tourSeason" />
+		<result column="TOUR_IMG" property="tourImg" />
+		<result column="LIKE_NUMBER" property="likeNumber" />
+	</resultMap>
+
+	<resultMap type="Festival" id="FestivalResultSet">
+		<id property="fsNo" column="FS_NO" />
+		<result property="tourNo" column="TOUR_NO" />
+		<result property="fsName" column="FS_NAME" />
+		<result property="fsArea" column="FS_AREA" />
+		<result property="fsSeason" column="FS_SEASON" />
+		<result property="fsTema" column="FS_TEMA" />
+		<result property="price" column="PRICE" />
+		<result property="fsDate" column="FS_DATE" />
+		<result property="fsMbti" column="FS_MBTI" />
+		<result property="fsImg" column="FS_IMG" />
+		<result column="LIKE_NUMBER" property="likeNumber" />
+	</resultMap>
+
+	<select id="selectTopTourists" resultMap="TouristResultSet">
+		SELECT *
+		FROM TOURIST
+		ORDER BY LIKE_NUMBER DESC
+	</select>
+
+	<select id="selectTopTouristsTwo" resultMap="TouristResultSet">
+		SELECT *
+		FROM TOURIST
+		ORDER BY LIKE_NUMBER DESC
+	</select>
+	
+	<select id="fesitivalIntro" resultMap="FestivalResultSet">
+		SELECT *
+		FROM FESTIVAL
+		ORDER BY LIKE_NUMBER DESC
+	</select>
+</mapper>
