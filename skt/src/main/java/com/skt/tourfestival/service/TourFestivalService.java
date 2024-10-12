@@ -1,6 +1,7 @@
 package com.skt.tourfestival.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.skt.festival.model.vo.Festival;
 import com.skt.tourist.model.vo.Tourist;

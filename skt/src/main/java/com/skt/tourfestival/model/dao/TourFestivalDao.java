@@ -1,6 +1,8 @@
 package com.skt.tourfestival.model.dao;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
@@ -50,4 +52,6 @@ public class TourFestivalDao {
 	public Festival selectFestival(SqlSession sqlSession, int fsNo) {
 		return sqlSession.selectOne("festivalMapper.selectFestival",fsNo);
 	}
+
+	
 }

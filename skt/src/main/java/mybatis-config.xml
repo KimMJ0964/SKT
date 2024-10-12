@@ -39,8 +39,8 @@
       <dataSource type="POOLED">
         <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
         <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
-        <property name="username" value="SKT"/>
-        <property name="password" value="SKT"/>
+        <property name="username" value="Skt"/>
+        <property name="password" value="Skt"/>
       </dataSource>
     </environment>
   </environments>

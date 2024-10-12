@@ -45,9 +45,10 @@
 			   FS_URL, 
 			   FS_DCT, 
 			   FS_LIKE, 
-			   FS_END,
-			   FS_START
+			   TO_CHAR(FS_END, 'YYYY-MM-DD') AS FS_END,  -- 날짜 형식 변환
+           TO_CHAR(FS_START, 'YYYY-MM-DD') AS FS_START -- 날짜 형식 변환
 		FROM FESTIVAL
-		WHERE FS_NO = #{fsNo} </select>
-	
+		WHERE FS_NO = #{fsNo} 
+		</select>
+		
 </mapper>

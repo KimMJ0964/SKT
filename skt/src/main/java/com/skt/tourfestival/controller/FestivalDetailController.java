@@ -1,11 +1,13 @@
 package com.skt.tourfestival.controller;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 import com.skt.festival.model.vo.Festival;
 import com.skt.tourfestival.service.TourFestivalService;
@@ -39,11 +41,16 @@ public class FestivalDetailController extends HttpServlet {
 				
 				if(f != null) {
 					request.setAttribute("f", f);
+			        
 					request.getRequestDispatcher("views/sub2_TF/TourFestivalFesDeail.jsp").forward(request, response);
 				}else {
 					request.setAttribute("errorMsg", "상세조회 실패");
 					request.getRequestDispatcher("views/common/errorPage.jsp").forward(request, response);
 				}
+				
+		        
+		        
+		        
 	}
 
 	/**
