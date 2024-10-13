@@ -1,5 +1,6 @@
 package com.skt.course.service;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 
 import org.apache.ibatis.session.SqlSession;
@@ -23,5 +24,8 @@ public class CourseServiceImpl implements CourseService{
 		sqlSession.close();
 		return result;
 	}
+=======
+public class CourseServiceImpl {
+>>>>>>> a29a27fd9db28423151b6955658271143303907e
 
 }

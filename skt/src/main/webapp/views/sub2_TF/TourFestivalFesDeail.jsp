@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<<<<<<< HEAD
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+=======
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+>>>>>>> a29a27fd9db28423151b6955658271143303907e
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>축제 상세페이지</title>
     <link rel="stylesheet" href="./views/sub2_TF/css/TourFestivalResDetail.css?after">
+<<<<<<< HEAD
     <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=3643b6hh5b"></script> 
     
     <style>
@@ -41,6 +46,11 @@
 <body>
 <jsp:include page="/views/common/menubar.jsp" />
 <br><br><br>
+=======
+</head>
+<body>
+<jsp:include page="/views/common/menubar.jsp" />
+>>>>>>> a29a27fd9db28423151b6955658271143303907e
     <div class="container">
         <div class="header">
             <img src="./resource/festival/${f.fsImg }" alt="축제 이미지" class="festival-image">
@@ -59,6 +69,7 @@
             
             <p>${f.fsDct }</p>
         </div>
+<<<<<<< HEAD
         <!-- 관심등록 버튼 추가 -->
         <div class="interest-button" align="center">
             <form action="fsInterested.ft" method="post">
@@ -90,3 +101,13 @@
     </script>
 </body>
 </html>
+=======
+
+        
+
+        
+        
+    </div>
+</body>
+</html>
+>>>>>>> a29a27fd9db28423151b6955658271143303907e

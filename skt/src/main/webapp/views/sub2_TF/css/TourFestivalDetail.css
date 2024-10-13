@@ -1,15 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body {
-   display: flex;
-    justify-content: center;
-    background-color: #DFF0FF;
-    
-}
 
 .container {
     width: 900px;
@@ -31,10 +20,12 @@ body {
 }
 
 .second-content img{
-    border-radius: 500px;
-    width: 45%;
-    margin:50px;
-    float: left;
+	border-radius: 100px;
+	    width: 45%;
+	    margin: 50px;
+	    float: left;
+	    height: 400px;
+	    border: #6FBAFF solid 15px;
 }
 
 .second-content span{
@@ -45,15 +36,18 @@ body {
 }
 
 .second-content h3{
-    background-color: #6FBAFF;
-    padding:20px 40px;
-    font-size: 30px;
-    border-radius: 200px;
+	background-color: #6FBAFF;
+	padding: 20px 10px;
+	font-size: 30px;
+	border-radius: 200px;
+	text-align: center;
 }
 
 .second-content p{
-    font-size: 25px;
-    margin: 20px;
+	font-size: 20px;
+	    margin: 20px;
+	    padding: 0px;
+	    border-bottom: #6FBAFF solid 4px;
 }
 
 .second-content h4{

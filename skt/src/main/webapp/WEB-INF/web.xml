@@ -401,7 +401,11 @@
     <servlet-name>courseDetail.cs</servlet-name>
     <url-pattern>/courseDetail.cs</url-pattern>
   </servlet-mapping>
+<<<<<<< HEAD
   <servlet>
+=======
+<servlet>
+>>>>>>> a29a27fd9db28423151b6955658271143303907e
     <description></description>
     <display-name>detail.tf</display-name>
     <servlet-name>detail.tf</servlet-name>
@@ -421,6 +425,7 @@
     <servlet-name>fesdatail.tf</servlet-name>
     <url-pattern>/fesdatail.tf</url-pattern>
   </servlet-mapping>
+<<<<<<< HEAD
   <servlet>
     <description></description>
     <display-name>tourInterested.ft</display-name>
@@ -441,4 +446,6 @@
     <servlet-name>fsInterested.ft</servlet-name>
     <url-pattern>/fsInterested.ft</url-pattern>
   </servlet-mapping>
+=======
+>>>>>>> a29a27fd9db28423151b6955658271143303907e
 </web-app>

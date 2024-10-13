@@ -2,12 +2,21 @@ package com.skt.tourfestival.service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+<<<<<<< HEAD
 
 import org.apache.ibatis.session.SqlSession;
 
 import com.skt.board.model.vo.BoardLike;
 import com.skt.festival.model.vo.Festival;
 import com.skt.member.model.vo.Interested;
+=======
+import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.skt.festival.model.vo.Festival;
+>>>>>>> a29a27fd9db28423151b6955658271143303907e
 import com.skt.tourfestival.model.dao.TourFestivalDao;
 import com.skt.tourist.model.vo.Tourist;
 
@@ -105,6 +114,7 @@ public class TourFestivalServiceImpl implements TourFestivalService{
 		return f;
 	}
 
+<<<<<<< HEAD
 	@Override
 	public int tourInterested(HashMap<String, Object> map) {
 		SqlSession sqlSession = Template.getSqlSession();
@@ -169,5 +179,8 @@ public class TourFestivalServiceImpl implements TourFestivalService{
             return 0; // 좋아요 취소
         }
 	}
+=======
+	
+>>>>>>> a29a27fd9db28423151b6955658271143303907e
 
 }

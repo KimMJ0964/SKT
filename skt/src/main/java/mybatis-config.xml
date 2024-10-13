@@ -20,7 +20,10 @@
   	<typeAlias type="com.skt.festival.model.vo.Festival" alias="Festival" />
   	<typeAlias type="com.skt.member.model.vo.MemberProfileImg" alias="MemberProfileImg" />
   	<typeAlias type="com.skt.member.model.vo.Interested" alias="Interested" />
+<<<<<<< HEAD
   	<typeAlias type="com.skt.course.model.vo.SubCourse" alias="SubCourse" />
+=======
+>>>>>>> a29a27fd9db28423151b6955658271143303907e
   </typeAliases>
 
   <!-- environments : mybatis에서 연동할 db정보들을 등록하는 여역 -->
@@ -40,8 +43,13 @@
       <dataSource type="POOLED">
         <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
         <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+<<<<<<< HEAD
         <property name="username" value="SKT"/>
         <property name="password" value="SKT"/>
+=======
+        <property name="username" value="Skt"/>
+        <property name="password" value="Skt"/>
+>>>>>>> a29a27fd9db28423151b6955658271143303907e
       </dataSource>
     </environment>
   </environments>
@@ -53,6 +61,9 @@
     <mapper resource="/mappers/tour-mapper.xml" />
     <mapper resource="/mappers/mainPage-mapper.xml"/>
     <mapper resource="/mappers/festival-mapper.xml"/>
+<<<<<<< HEAD
     <mapper resource="/mappers/course-mapper.xml"/>
+=======
+>>>>>>> a29a27fd9db28423151b6955658271143303907e
   </mappers>
 </configuration>
