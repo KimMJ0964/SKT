@@ -8,10 +8,14 @@
 <head>
 <meta charset="UTF-8">
 <title>로그인</title>
-<link rel="stylesheet" href="<%=contextPath %>/views/login/login.css">
+<link rel="stylesheet" href="<%=contextPath %>/views/login/css/login.css">
+
+<style>
+</style>
 </head>
 <body>
 <jsp:include page="/views/common/menubar.jsp" /> 
+	<br><br><br>
 	<div class="container">
     <form action="<%=contextPath %>/login.me" method="post">
          <img src="<%=contextPath %>/views/login/img/logo_1.png" alt="">
@@ -21,11 +25,12 @@
         <button type="submit" style="height: 50px;">로그인</button>
     </form>
     <div class="member">
-    <a href="<%=contextPath %>/views/login/searchid.jsp"><b>아이디 찾기 | </b></a>
-    <a href="<%=contextPath %>/views/login/searchPwd.jsp"><b>비밀번호 찾기</b></a>
+    <a href="<%=contextPath %>/intoSearchId.co"><b>아이디 찾기 | </b></a>
+    <a href="<%=contextPath %>/intoSearchPwd.co"><b>비밀번호 찾기</b></a>
     <br>
-    <p id="memberp">아직 회원이 아니시라면 <b style="color: black;">회원가입</b></p>
+    <p id="memberp">아직 회원이 아니시라면 <b style="color: black;"><a href="<%=contextPath %>/intoRegister.co"><b>회원가입</b></a></b></p>
     </div>
     </div>
+    <jsp:include page="/views/common/footer.jsp" />
 </body>
 </html>

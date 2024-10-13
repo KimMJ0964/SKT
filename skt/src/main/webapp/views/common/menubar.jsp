@@ -56,7 +56,7 @@ body {
 }
 
 .nav-wrap{
-    width: 1440px;
+    width: 100vw;
     background-color: #DFF0FF;
 }
 
@@ -65,6 +65,7 @@ body {
     list-style: none;
     padding: 0px;
     margin: 0px;
+    
 }
 
 #navi a {
@@ -75,10 +76,11 @@ body {
 
 #navigator {
     margin-top: 20px;
-    margin-left: 80px;
+    margin-left: 16.5%;
     width: 1280px;
     height: 90px;
-       
+    z-index: 9999;   
+    position: fixed;
     
 }
 
@@ -90,6 +92,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
 }
 
 #navi > li {
@@ -157,6 +160,11 @@ body {
     margin-left: 40px;
 }
 
+#menubar-profile {
+   margin-top: 10px;
+    margin-left: 40px;
+}
+
 #navi>.nav-content>ul a {
     font-size: 20px;
 }
@@ -185,7 +193,7 @@ body {
     border-radius: 40px;
 }
  .nav-wrap  hr{
-	margin:15px;
+   margin:15px;
     width: 80%;
 }
 
@@ -199,53 +207,42 @@ body {
                 <img src="<%=contextPath %>/views/common/img/logo_1.png" alt="로고" onclick href="<%= request.getContextPath() %>/index.jsp"></a></li>
             
                 <li class="nav-content">
-                    <a href="">명소찾기</a>
+                    <a href="<%=contextPath %>/tourfestivallist.tf?cpage=1">명소찾기</a>
                     <ul>
-                        <li><a href="">지역별</a></li>
+                        <li><a href="<%=contextPath %>/tourfestivallist.tf?cpage=1">관광지/축제</a></li>
                         <hr>
-                        <li><a href="">테마별</a></li>
+                        <li><a href="<%=contextPath %>/intoMbti.co">축MBTI</a></li>
                     </ul>
                 
-                </li>
-                <li class="nav-content">
-                    <a href="">축제</a>
-                    <ul>
-                        <li><a href="<%=contextPath %>/views/festival-test/sub_test.jsp">MBTI</a></li>
-                        <hr>
-                        <li><a href="">계절별</a></li>
-                        <hr>
-                        <li><a href="">지역별</a></li>
-                        <hr>
-                        <li><a href="">테마별</a></li>
-                    </ul>
                 </li>
                 <li class="nav-content">
                     <a href="">여행코스</a>
                 </li>
                 <li class="nav-content">
-                    <a href="">커뮤니티</a>
+                    <a href="<%=contextPath %>/createMyCourseToPage.mc">나만의 코스</a>
+                </li>
+                <li class="nav-content">
+                    <a href="<%=contextPath %>/board.bo?cpage=1">커뮤니티</a>
                 </li>
 
                 <c:choose>
              <c:when test="${ empty loginUser }">
               <!-- 로그인전 -->
             <div id="nav-menu1" class="nav-content">
-            <a href=""></a>
-              <ul>
-                       <li><a href='<%=contextPath %>/views/login/login.jsp'">로그인</a></li>
+            <a href=""><img src="<%=contextPath %>/views/common/img/login_logo.png" alt="로그인 로고" style="width: 35px; height: auto;"></a>
+              <ul id="menubar-profile">
+                       <li><a href='<%=contextPath %>/intoLogin.co'>로그인</a></li>
                         <hr>
-                        <li><a href="">회원가입</a></li>
+                        <li><a href="<%=contextPath %>/intoRegister.co">회원가입</a></li>
                     </ul>
                  </div>
                   </c:when>
               <c:otherwise>
               <!-- 로그인후 -->
               <div id="nav-menu2" class="nav-content">
-              <a href=""></a>
+              <a href=""><img src="<%=contextPath %>/views/common/img/login_logo.png" alt="로그인 로고" style="width: 35px; height: auto;"></a>
                     <ul>
-                        <li><a href="">마이페이지</a></li>
-                        <hr>
-                        <li><a href="">장바구니</a></li>
+                        <li><a href="<%=contextPath %>/myPageTest.me">마이페이지</a></li>
                         <hr>
                         <li><a href="<%=contextPath %>/logout.me">로그아웃</a></li>
                     </ul>
@@ -254,5 +251,8 @@ body {
                 </c:choose>
             </ul>
         </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+    </script>
 </body>
 </html>
