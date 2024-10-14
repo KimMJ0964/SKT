@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<<<<<<< HEAD
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-=======
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
->>>>>>> a29a27fd9db28423151b6955658271143303907e
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>축제 상세페이지</title>
     <link rel="stylesheet" href="./views/sub2_TF/css/TourFestivalResDetail.css?after">
-<<<<<<< HEAD
     <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=3643b6hh5b"></script> 
     
     <style>
@@ -28,29 +23,19 @@
 			overflow-x: hidden;
 		}
 		
-		 .btn-interest {
-            background-color: #87CEEB; /* 하늘색 */
-            color: white;
-            border: none; /* 테두리 없음 */
-            border-radius: 25px; /* 둥근 모서리 */
-            padding: 10px 20px; /* 버튼 안쪽 여백 */
-            font-size: 16px;
-            cursor: pointer;
-        }
+		.interest-button button{
+   width: 400px; height:50px; padding: 10px; background:white; border: #6FBAFF solid 2px; color:#6FBAFF;
+   border-radius:20px;
+}
 
-        .btn-interest:hover {
-            background-color: #00BFFF; /* 마우스 오버 시 더 진한 하늘색 */
-        }
+.interest-button button:hover{
+   color:white;
+}
 </style>
 </head>
 <body>
 <jsp:include page="/views/common/menubar.jsp" />
 <br><br><br>
-=======
-</head>
-<body>
-<jsp:include page="/views/common/menubar.jsp" />
->>>>>>> a29a27fd9db28423151b6955658271143303907e
     <div class="container">
         <div class="header">
             <img src="./resource/festival/${f.fsImg }" alt="축제 이미지" class="festival-image">
@@ -69,7 +54,6 @@
             
             <p>${f.fsDct }</p>
         </div>
-<<<<<<< HEAD
         <!-- 관심등록 버튼 추가 -->
         <div class="interest-button" align="center">
             <form action="fsInterested.ft" method="post">
@@ -101,13 +85,3 @@
     </script>
 </body>
 </html>
-=======
-
-        
-
-        
-        
-    </div>
-</body>
-</html>
->>>>>>> a29a27fd9db28423151b6955658271143303907e

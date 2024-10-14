@@ -1,261 +1,108 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<% String contextPath = request.getContextPath(); %>
-
+    pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <% String contextPath = request.getContextPath(); %>
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!--css-->
+  <link rel="stylesheet" href="<%=contextPath%>/views/course/css/sub_course.css?after">
 <title>Insert title here</title>
-
-<link rel="stylesheet" href="<%=contextPath%>/views/sub_course/sub_course_main.css">
-    <link rel="stylesheet" href="<%=contextPath%>/views/sub_course/index.css">
-    <script
-        src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-        crossorigin="anonymous"></script>
-    <script
-        src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"
-        integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM="
-        crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="search-course">
-        <h1 id="find">여행코스를 찾아보세요!</h1>
-
-        <div id="search-area">
-            <input type="text" placeholder="지역명이나 관광지로 검색해보세요" id="search">
-            <input type="button" class="search-img" value="">
+<jsp:include page="/views/common/menubar.jsp" />
+<br><br><br>
+<div class="wrap">
+        <div id="search-form">
+        <form id="searchForm" action="course.se" method="post">
+            <table>
+                <tr>
+                    <th><p>지역별</p></th>
+                    <td>
+                        <div class="area">
+                            <input type="checkbox" name="area" id="seoul" value="서울">
+                            <label for="seoul">#서울</label>
+                            <input type="checkbox" name="area" id="Gyeonggi" value="경기도">
+                            <label for="Gyeonggi">#경기</label>
+                            <input type="checkbox" name="area" id="Gangwon " value="경상도 ">
+                            <label for="Gangwon ">#강원</label>
+                            <input type="checkbox" name="area" id="Chungcheong" value="충청도">
+                            <label for="Chungcheong">#충청</label>
+                            <input type="checkbox" name="area" id="Gyeongsangbuk" value="경상도">
+                            <label for="Gyeongsangbuk">#경상</label>
+                            <input type="checkbox" name="area" id="Jeolla" value="전라도">
+                            <label for="Jeolla">#전라</label>
+                            <input type="checkbox" name="area" id="Jeju " value="제주도">
+                            <label for="Jeju ">#제주</label>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <th><p>테마별</p></th>
+                    <td>
+                        <div class="tema">
+                            <input type="checkbox" name="theme" id="history" value="역사">
+                            <label for="history">#역사</label>
+                            <input type="checkbox" name="theme" id="city" value="도시">
+                            <label for="city">#도시</label>
+                            <input type="checkbox" name="theme" id="natural" value="자연">
+                            <label for="natural">#자연</label>
+                            <input type="checkbox" name="theme" id="art" value="예술">
+                            <label for="art">#예술</label>
+                            <input type="checkbox" name="theme" id="healling" value="힐링">
+                            <label for="healling">#힐링</label>
+                            <input type="checkbox" name="theme" id="dynamic" value="다이나믹">
+                            <label for="dynamic">#다이나믹</label>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </div>
-    
-        <div id="area-list">
-            <div class="tab_content">
-                <input type="radio" name="tabmenu" id="tab01" checked>
-                <label for="tab01" class="area-btn">서울/경기</label>
-        
-                <input type="radio" name="tabmenu" id="tab02">
-                <label for="tab02" class="area-btn">강원도</label>
-        
-                <input type="radio" name="tabmenu" id="tab03">
-                <label for="tab03" class="area-btn">충청도</label>
-        
-                <input type="radio" name="tabmenu" id="tab04">
-                <label for="tab04" class="area-btn">경상도</label>
-        
-                <input type="radio" name="tabmenu" id="tab05">
-                <label for="tab05" class="area-btn">전라도</label>
-        
-                <input type="radio" name="tabmenu" id="tab06">
-                <label for="tab06" class="area-btn">제주도</label>
-
-                <div class="conbox con1">서울/경기 콘텐츠</div>
-                <div class="conbox con2">강원도 콘텐츠</div>
-                <div class="conbox con3">충청도 콘텐츠</div>
-                <div class="conbox con4">경상도 콘텐츠</div>
-                <div class="conbox con5">전라도 콘텐츠</div>
-                <div class="conbox con6">제주도 콘텐츠</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="course_slide">
-        <h1>내 취향 그대로! 테마별 여행코스</h1>
-        <div class="slide_contain">
-            <div class="slides">
-            <div class="slide">
-                <p>다이나믹</p>
-            </div>
-            <div class="slide">
-                <p>역사의 아픔</p>
-            </div>
-            <div class="slide">
-                <p>1인 여행</p>
-            </div>
-            <div class="slide">
-                <p>힐링 여행</p>
-            </div>
-            </div>
-        </div>
-      <script src="./sub_course_main_slide.js"></script>
-    </div>
-
-    <div class="course_recommond">
-        <h1>TRAFI가 추천하는 여행코스</h1>
-        <div class="course_con">
-            <div class="box">
-                <div class="namebox1">
-                    <p><b>2박 3일코스</b></p>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="<%=contextPath%>/views/course/js/sub_course-area.js?after"></script>
+           <div id="search">   
+                <input type="submit" value="검색">
+           </div>
+         </form> 
+         
+        <div id="content-box">
+            <div class="list-box" id="tour-content">
+            <c:forEach var="c" items="${list}">
+                <div id="list-con">
+                    <div id="list-img">
+                     <a href="<%=contextPath%>/courseDetail.cs?cno=${c.courseNo}">
+                    <img src="./views/course/img/courseThumbnail/${ c.courseImg}" style="height: 300px; width: 300px;">
+                     </a>
+                    </div>
+                    <h3>${c.courseName}</h3>
+                    <div id="under-area">
+                        <h5>${c.courseArea}</h5>
+                        <button type="button">
+                            <img src="./views/sub2_TF/img/Like.png" class="like(this)" onclick="like(this)">
+                        </button>
+                    </div>
                 </div>
-                <div id="course_line1">
-                    
-                </div>
-                <ul>
-                    <li>
-                        <div class="dot-con first-dot">
-                            <div class="dot"></div>
-                            <p class="click">보석 박물관</p>
-                            <div class="text-desc">
-                                <table>
-                                    <tr>
-                                        <th>휴관일</th>
-                                        <td>| 매년 1월1일 / 매주 월요일</td>
-                                    </tr>
-                                    <tr>
-                                        <th>관람시간</th>
-                                        <td>| 10:00 ~ 18:00</td>
-                                    </tr>
-                                    <tr>
-                                        <th>매표시간</th>
-                                        <td>| 10:00 ~ 17:00</td>
-                                    </tr>
-                                    <tr>
-                                        <th>관람해설</th>
-                                        <td>| 063)859-4645</td>
-                                    </tr>
-                                    <tr>
-                                        <th>관람문의</th>
-                                        <td>| 063)859-4641, 4772</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="dot-con">
-                            <div class="dot first-dot"></div>
-                            <p class="click">본향</p>
-                            <div class="text-desc">
-                                <table>
-                                    <tr>
-                                        <th>휴관일</th>
-                                        <td>| 매년 1월1일 / 매주 월요일</td>
-                                    </tr>
-                                    <tr>
-                                        <th>관람시간</th>
-                                        <td>| 10:00 ~ 18:00</td>
-                                    </tr>
-                                    <tr>
-                                        <th>매표시간</th>
-                                        <td>| 10:00 ~ 17:00</td>
-                                    </tr>
-                                    <tr>
-                                        <th>관람해설</th>
-                                        <td>| 063)859-4645</td>
-                                    </tr>
-                                    <tr>
-                                        <th>관람문의</th>
-                                        <td>| 063)859-4641, 4772</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="dot-con">
-                            <div class="dot first-dot"></div>
-                            <p class="click">익산 왕궁리 유적</p>
-                            <div class="text-desc">
-                                <table>
-                                    <tr>
-                                        <th>휴관일</th>
-                                        <td>| 매년 1월1일 / 매주 월요일</td>
-                                    </tr>
-                                    <tr>
-                                        <th>관람시간</th>
-                                        <td>| 10:00 ~ 18:00</td>
-                                    </tr>
-                                    <tr>
-                                        <th>매표시간</th>
-                                        <td>| 10:00 ~ 17:00</td>
-                                    </tr>
-                                    <tr>
-                                        <th>관람해설</th>
-                                        <td>| 063)859-4645</td>
-                                    </tr>
-                                    <tr>
-                                        <th>관람문의</th>
-                                        <td>| 063)859-4641, 4772</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="dot-con">
-                            <div class="dot first-dot"></div>
-                            <p class="click">웨스턴 라이프 호텔</p>
-                            <div class="text-desc">
-                                <table>
-                                    <tr>
-                                        <th>휴관일</th>
-                                        <td>| 매년 1월1일 / 매주 월요일</td>
-                                    </tr>
-                                    <tr>
-                                        <th>관람시간</th>
-                                        <td>| 10:00 ~ 18:00</td>
-                                    </tr>
-                                    <tr>
-                                        <th>매표시간</th>
-                                        <td>| 10:00 ~ 17:00</td>
-                                    </tr>
-                                    <tr>
-                                        <th>관람해설</th>
-                                        <td>| 063)859-4645</td>
-                                    </tr>
-                                    <tr>
-                                        <th>관람문의</th>
-                                        <td>| 063)859-4641, 4772</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="box">
-                <div class="namebox2">
-                    <p><b>당일치기 코스</b></p>
-                </div>
-                <div id="course_line2">
-
-                </div>
-            </div>
-            <div class="box">
-                <div class="namebox2">
-                    <p><b>당일치기 코스</b></p>
-                </div>
-                <div id="course_line2">
-
-                </div>
-            </div>
-            <div class="box">
-                <div class="namebox1">
-                    <p><b>2박 3일코스</b></p>
-                </div>
-                <div id="course_line1">
-
-                </div>
+                </c:forEach>
             </div>
         </div>
-    </div>
-    <script>
-        $(".click").click(function(){
-            //this -> 클릭이벤트가 발생한 요소(div)
-            //$(this).next(); -> 선택된 요소의 뒤에있는 요소
-            
-            const $p = $(this).next();
-            if($p.css("display") === "none"){
-                $(".text-desc").slideUp();
-                $p.slideDown();
-            } else {
-                $p.slideUp();
+    	<br><br><br>
+    	<jsp:include page="/views/common/footer.jsp" />
+        <script>
+            // 좋아요 버튼 클릭 시 해당 이미지 변경
+            function like(element) {
+                if (element.src.includes("Like_r.png")) {
+                    element.src = "./views/sub2_TF/img/Like.png";
+                } else {
+                    element.src = "./views/sub2_TF/img/Like_r.png";
+                }
             }
-        })
-    </script>
-</body>
-<body>
+        </script>
+
+    </div>
+    
+
 
 </body>
 </html>

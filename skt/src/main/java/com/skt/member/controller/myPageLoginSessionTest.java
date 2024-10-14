@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import com.skt.board.model.vo.Board;
 import com.skt.board.model.vo.BoardComment;
+import com.skt.course.model.vo.Course;
 import com.skt.festival.model.vo.Festival;
 import com.skt.member.model.vo.Member;
 import com.skt.member.model.vo.MemberProfileImg;
@@ -46,8 +47,10 @@ public class myPageLoginSessionTest extends HttpServlet {
 	    ArrayList<BoardComment> boardComment = memberService.myPageComment(loginValue);
 	    ArrayList<Festival> interested = memberService.myPageInterested(loginValue);
 	    ArrayList<Tourist> interestedTwo = memberService.myPageInterestedTwo(loginValue);
+	    ArrayList<Course> interestedThree = memberService.myPageInterestedThree(loginValue);
 	    MemberProfileImg profileImg = memberService.selectProfileImage(loginValue);
 
+	    System.out.println("내 코스 : " + interestedThree);
 	    request.setAttribute("member", member);
 	    System.out.println(member);
 	    
@@ -67,6 +70,10 @@ public class myPageLoginSessionTest extends HttpServlet {
 	    
 	    if (interestedTwo != null && !interestedTwo.isEmpty()) {
 	        request.setAttribute("interestedListTwo", interestedTwo);
+	    }
+	    
+	    if (interestedThree != null && !interestedThree.isEmpty()) {
+	        request.setAttribute("interestedListThree", interestedThree);
 	    }
 	    
 	    if (profileImg != null) {

@@ -2,10 +2,7 @@ body{
     width: 100%; height: 100vh;
     background-color: #DFF0FF;
     margin: 0 auto;
-<<<<<<< HEAD
 	overflow-x: hidden;
-=======
->>>>>>> a29a27fd9db28423151b6955658271143303907e
 }
 
 .info-con{
@@ -19,7 +16,7 @@ body{
     text-align: center;
 }
 #map-con p{
-    width: 200px; height: 40px;
+    width: 400px; height: 40px;
     background-color: #6FBAFF;
     margin: 0 auto;
     border-radius: 50px;

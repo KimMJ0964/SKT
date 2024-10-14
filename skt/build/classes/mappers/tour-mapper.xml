@@ -56,4 +56,9 @@
 	FROM TOURIST 
 	WHERE TOUR_NO = #{tourNo}
 	</select>
+	
+	<select id="searchTours" resultMap="tourResultSet">
+<!--  resultType을 Tour로 설정  -->
+SELECT * FROM TOURIST WHERE TOUR_NAME LIKE '%' || #{keyword} || '%'
+</select>
 </mapper>

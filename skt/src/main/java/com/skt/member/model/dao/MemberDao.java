@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.skt.board.model.vo.Board;
 import com.skt.board.model.vo.BoardComment;
+import com.skt.course.model.vo.Course;
 import com.skt.festival.model.vo.Festival;
 import com.skt.member.model.vo.Interested;
 import com.skt.member.model.vo.Member;
@@ -48,6 +49,10 @@ public class MemberDao {
     
     public ArrayList<Tourist> myPageInterestedTwo(SqlSession sqlSession, String memId) {
     	return (ArrayList)sqlSession.selectList("memberMapper.myPageInterestedTwo", memId);
+    }
+    
+    public ArrayList<Course> myPageInterestedThree(SqlSession sqlSession, String memId) {
+    	return (ArrayList)sqlSession.selectList("memberMapper.myPageInterestedThree", memId);
     }
     
     public Member getMemberById(SqlSession session, String memId) {
@@ -119,5 +124,9 @@ public class MemberDao {
 	 
 	 public int deleteInterestedTour(SqlSession sqlSession, Interested interested) {
 		 return sqlSession.delete("memberMapper.deleteInterestedTour", interested);
+	 }
+	 
+	 public int deleteInterestedCourse(SqlSession sqlSession, Interested interested) {
+		 return sqlSession.delete("memberMapper.deleteInterestedCourse", interested);
 	 }
 }

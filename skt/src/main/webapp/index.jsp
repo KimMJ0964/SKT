@@ -84,7 +84,7 @@ String contextPath = request.getContextPath();
             <!-- 인기 관광 명소 리스트 -->
              <ul id="topTouristsList"></ul>
             <div class="footer-link">
-               <a href="#">여러 관광지 보러가기 &gt;</a>
+               <a href="<%=contextPath %>/tourfestivallist.tf?cpage=1">여러 관광지 보러가기 &gt;</a>
             </div>
          </div>
       </div>
@@ -217,13 +217,13 @@ String contextPath = request.getContextPath();
                 allTourists.slice(0, 4).forEach(function(tourist, index) {
                     // 조건문을 사용하여 첫 번째, 두 번째, 세 번째, 네 번째 경우를 다르게 처리
                     if (index === 0) {
-                        popTourDiv.append('<div id="first-tour" class="item-01" style="height: 40%;"><div class="up-line01"  style="height: 200px;"> <div class="photo01"><img src="./resource/tourThumb/'+ tourist.tourImg +'" height="190px" width="190px"></div><div class="desc01"><h1>#' + tourist.tourTema + '</h1><br><h3>' + tourist.tourName + '</h3><h5>' + tourist.tourArea + '</h5></div> </div><div class="under-line01"></div></div>');
+                        popTourDiv.append('<div id="first-tour" class="item-01" style="height: 40%;"><div class="up-line01"  style="height: 200px;"> <div class="photo01"><a href="detail.tf?tno=' + tourist.tourNo + '"><img src="./resource/tourThumb/'+ tourist.tourImg +'" height="190px" width="190px"></a></div><div class="desc01"><h1>#' + tourist.tourTema + '</h1><br><h3>' + tourist.tourName + '</h3><h5>' + tourist.tourArea + '</h5></div> </div><div class="under-line01"></div></div>');
                     } else if (index === 1) {
-                       popTourDiv.append('<div id="second-tour" class="item-01" style="height: 40%;"><div class="up-line01" style="height: 200px;"> <div class="photo01"><img src="./resource/tourThumb/'+ tourist.tourImg +'" height="190px" width="190px"> </div><div class="desc01"><h1>#' + tourist.tourTema + '</h1><br><h3>' + tourist.tourName + '</h3><h5>' + tourist.tourArea + '</h5></div> </div><div class="under-line01"></div></div>');
+                       popTourDiv.append('<div id="second-tour" class="item-01" style="height: 40%;"><div class="up-line01" style="height: 200px;"> <div class="photo01"><a href="detail.tf?tno=' + tourist.tourNo + '"><img src="./resource/tourThumb/'+ tourist.tourImg +'" height="190px" width="190px"></a></div><div class="desc01"><h1>#' + tourist.tourTema + '</h1><br><h3>' + tourist.tourName + '</h3><h5>' + tourist.tourArea + '</h5></div> </div><div class="under-line01"></div></div>');
                     } else if (index === 2) {
-                       popTourDiv.append('<div id="third-tour" class="item-02" style="height: 40%;"><div class="up-line02" style="height: 200px;"> <div class="photo02"><img src="./resource/tourThumb/'+ tourist.tourImg +'"  height="190px" width="190px"></div><div class="desc02"><h1>#' + tourist.tourTema + '</h1><br><h3>' + tourist.tourName + '</h3><h5>' + tourist.tourArea + '</h5></div> </div><div class="under-line02"></div></div>');
+                       popTourDiv.append('<div id="third-tour" class="item-02" style="height: 40%;"><div class="up-line02" style="height: 200px;"> <div class="photo02"><a href="detail.tf?tno=' + tourist.tourNo + '"><img src="./resource/tourThumb/'+ tourist.tourImg +'"  height="190px" width="190px"></a></div><div class="desc02"><h1>#' + tourist.tourTema + '</h1><br><h3>' + tourist.tourName + '</h3><h5>' + tourist.tourArea + '</h5></div> </div><div class="under-line02"></div></div>');
                     } else if (index === 3) {
-                       popTourDiv.append('<div id="fourth-tour" class="item-02" style="height: 40%;"><div class="up-line02" style="height: 200px;"> <div class="photo02"><img src="./resource/tourThumb/'+ tourist.tourImg +'" height="190px" width="190px"></div><div class="desc02"><h1>#' + tourist.tourTema + '</h1><br><h3>' + tourist.tourName + '</h3><h5>' + tourist.tourArea + '</h5></div> </div><div class="under-line02"></div></div>');
+                       popTourDiv.append('<div id="fourth-tour" class="item-02" style="height: 40%;"><div class="up-line02" style="height: 200px;"> <div class="photo02"><a href="detail.tf?tno=' + tourist.tourNo + '"><img src="./resource/tourThumb/'+ tourist.tourImg +'" height="190px" width="190px"></a></div><div class="desc02"><h1>#' + tourist.tourTema + '</h1><br><h3>' + tourist.tourName + '</h3><h5>' + tourist.tourArea + '</h5></div> </div><div class="under-line02"></div></div>');
                     }
                 });
             }
@@ -240,7 +240,7 @@ String contextPath = request.getContextPath();
                     var topFourFestivals = data.slice(0, 4); // 데이터의 첫 6개 항목 선택
 
                     topFourFestivals.forEach(function(festival) {
-                        list.append('<div class="item"><div class="img-con" ><img src="./resource/festival/'+ festival.fsImg +'" alt="" style="height: 250px;" /></div><div class="text-con"><h1>' + festival.fsName + '</h1><h3>' + festival.fsArea + '</h3><h5>#'+ festival.fsTema +'</h5></div> </div>'); // TOUR_NAME 출력
+                        list.append('<div class="item"><div class="img-con" ><a href="fesdatail.tf?fno='+ festival.fsNo +'"><img src="./resource/festival/'+ festival.fsImg +'" alt="" style="height: 250px;" /></a></div><div class="text-con"><h1>' + festival.fsName + '</h1><h3>' + festival.fsArea + '</h3><h5>#'+ festival.fsTema +'</h5></div> </div>'); // TOUR_NAME 출력
                     });
                 },
                 error: function(jqXHR, textStatus, errorThrown) {

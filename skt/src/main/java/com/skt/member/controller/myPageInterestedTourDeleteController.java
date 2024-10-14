@@ -26,7 +26,7 @@ public class myPageInterestedTourDeleteController extends HttpServlet {
 		Member loginUser = (Member) request.getSession().getAttribute("loginUser");
 		String loginValue = loginUser.getMemId();
 		
-		Interested interested = new Interested(0, tourNoStr, loginValue);
+		Interested interested = new Interested(loginValue, 0, 0, tourNoStr);
 		
 		MemberService memberService = new MemberServiceImpl();
 		int result = memberService.deleteInterestedTour(interested);

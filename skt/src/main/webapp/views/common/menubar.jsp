@@ -216,7 +216,7 @@ body {
                 
                 </li>
                 <li class="nav-content">
-                    <a href="">여행코스</a>
+                    <a href="<%=contextPath %>/course.c?cpage=1">여행코스</a>
                 </li>
                 <li class="nav-content">
                     <a href="<%=contextPath %>/createMyCourseToPage.mc">나만의 코스</a>

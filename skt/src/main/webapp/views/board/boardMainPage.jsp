@@ -357,12 +357,13 @@ th {
                      -->
 					<c:forEach var="b" items="${list}">
 						<tr>
-							<td>${b.commNo}</td>
+							
+							<td><a href="detail.bo?bno=${b.commNo}">${b.commNo}</td>
 							<td width="400"><a href="detail.bo?bno=${b.commNo}">${b.title}</td>
-							<td>${b.type}</td>
-							<td>${b.memId }</td>
-							<td>${b.viewCount }</td>
-							<td>${b.createDate }</td>
+							<td><a href="detail.bo?bno=${b.commNo}">${b.type}</td>
+							<td><a href="detail.bo?bno=${b.commNo}">${b.memId }</td>
+							<td><a href="detail.bo?bno=${b.commNo}">${b.viewCount }</td>
+							<td><a href="detail.bo?bno=${b.commNo}">${b.createDate }</td>
 						</tr>
 					</c:forEach>
 				</tbody>

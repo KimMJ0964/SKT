@@ -221,7 +221,6 @@ input[type=submit]{
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    margin-top: 126PX;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -322,4 +321,8 @@ input[type=submit]{
     background-color: #fff;
     display: block;
     cursor: pointer;
+}
+
+.search-btn{
+    width: 300px;
 }

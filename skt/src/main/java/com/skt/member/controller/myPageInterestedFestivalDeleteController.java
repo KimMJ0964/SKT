@@ -29,7 +29,7 @@ public class myPageInterestedFestivalDeleteController extends HttpServlet {
 		Member loginUser = (Member) request.getSession().getAttribute("loginUser");
 		String loginValue = loginUser.getMemId();
 		
-		Interested interested = new Interested(fsNoStr, 0, loginValue);
+		Interested interested = new Interested(loginValue, 0, fsNoStr, 0);
 		
 		MemberService memberService = new MemberServiceImpl();
 		int result = memberService.deleteInterestedFestival(interested);

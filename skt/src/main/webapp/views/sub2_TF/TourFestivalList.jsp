@@ -17,8 +17,10 @@
 </head>
 <body>
 	<jsp:include page="/views/common/menubar.jsp" />
-	<br><br>
+	<br><br><br><br><br><br>
     <div class="wrap">
+    
+         <!--  
         <div id="search-form">
             <table>
                 <tr>
@@ -67,10 +69,41 @@
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="./views/sub2_TF/TourFestivalList-area.js"></script>
-           <div id="search">
-                <input type="submit" value="검색">
-           </div>
+        -->
         
+        <form action="search.tf" class="search-box" method="GET">
+            <div id="search-con">
+                <input type="hidden" name="cpage" value="1">
+                <!-- <select class="form-select me-2" name="condition">
+                    <option value="tour">관광지</option>
+                    <option value="festival">축제</option>
+                </select> -->
+                <input type="text" class="form-control me-2" name="keyword"
+                    value="${keyword}" placeholder="검색어를 입력하세요" 
+                    style="width: 480px;
+                    height: 60px;
+                    border-radius: 50px;
+                    font-size: 20px;
+                    font-weight: 800;
+                    margin-left: 480px;
+                    margin-top: 60px;
+                    border: none;
+                    padding-left: 20px;">
+                <div id="search-btn">
+                    <button type="submit" class="search-btn" style="width: 170px;
+                    height: 55px;
+                    margin-left: 640px;
+                    border: none;
+                    border-radius: 20px;
+                    color: #fff;
+                    font-size: 20px;
+                    font-weight: 800;
+                    background-color: #6FBAFF;
+                    margin-top: 30px;">검색</button>
+                </div>
+            </div>
+        </form>
+        <br><br><br>
            <div class="content2">
             <input type="radio" name="content-tour" id="ct" checked>
             <label for="ct">관광지</label>
@@ -145,14 +178,6 @@
                 });
             });
     
-            // // 좋아요 버튼 클릭 시 해당 이미지 변경
-            // function like(element) {
-            //     if (element.src.includes("Like_r.png")) {
-            //         element.src = "./views/sub2_TF/img/Like.png";
-            //     } else {
-            //         element.src = "./views/sub2_TF/img/Like_r.png";
-            //     }
-            // }
         </script>
     </div>
         <br><br><br>

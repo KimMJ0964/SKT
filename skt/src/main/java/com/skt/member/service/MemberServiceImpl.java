@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.skt.board.model.vo.Board;
 import com.skt.board.model.vo.BoardComment;
+import com.skt.course.model.vo.Course;
 import com.skt.festival.model.vo.Festival;
 import com.skt.member.model.dao.MemberDao;
 import com.skt.member.model.vo.Interested;
@@ -88,6 +89,15 @@ public class MemberServiceImpl implements MemberService {
 		SqlSession sqlSession = Template.getSqlSession();
 		ArrayList<Tourist> list = memberDao.myPageInterestedTwo(sqlSession, memId);
 
+		sqlSession.close();
+
+		return list;
+	}
+	
+	@Override
+	public ArrayList<Course> myPageInterestedThree(String memId) {
+		SqlSession sqlSession = Template.getSqlSession();
+		ArrayList<Course> list = memberDao.myPageInterestedThree(sqlSession, memId);
 		sqlSession.close();
 
 		return list;
@@ -258,6 +268,18 @@ public class MemberServiceImpl implements MemberService {
 	public int deleteInterestedTour(Interested interested) {
 		SqlSession sqlSession = Template.getSqlSession();
 		int result = memberDao.deleteInterestedTour(sqlSession, interested);
+		
+		if(result > 0) {
+			sqlSession.commit();
+		}
+		sqlSession.close();
+		
+		return result;
+	}
+	
+	public int deleteInterestedCourse(Interested interested) {
+		SqlSession sqlSession = Template.getSqlSession();
+		int result = memberDao.deleteInterestedCourse(sqlSession, interested);
 		
 		if(result > 0) {
 			sqlSession.commit();

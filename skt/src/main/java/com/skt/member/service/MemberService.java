@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.skt.board.model.vo.Board;
 import com.skt.board.model.vo.BoardComment;
+import com.skt.course.model.vo.Course;
 import com.skt.festival.model.vo.Festival;
 import com.skt.member.model.vo.Interested;
 import com.skt.member.model.vo.Member;
@@ -25,6 +26,8 @@ public interface MemberService {
     ArrayList<Festival> myPageInterested(String memId);
 
     ArrayList<Tourist> myPageInterestedTwo(String memId);
+    
+    ArrayList<Course> myPageInterestedThree(String memId);
 
     Member getMemberById(String memId);
 
@@ -51,4 +54,6 @@ public interface MemberService {
     int deleteInterestedFestival(Interested interested);
 
     int deleteInterestedTour(Interested interested);
+    
+    int deleteInterestedCourse(Interested interested);
 }

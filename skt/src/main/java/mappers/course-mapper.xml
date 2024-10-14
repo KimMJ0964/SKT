@@ -25,6 +25,15 @@
 		<result column="FS_LAT" property="fsLat" />
 		<result column="FS_LONG" property="fsLong" />
 	</resultMap>
+	
+	<resultMap id="courseResultSet" type="Course">
+      <result column="COURSE_NO" property="courseNo" />
+      <result column="COURSE_NAME" property="courseName" />
+      <result column="COURSE_AREA" property="courseArea" />
+      <result column="COURSE_TEMA" property="courseTema" />
+      <result column="COURSE_IMG" property="courseImg" />
+   </resultMap>
+	
 
 	<select id="selectSubCourse" resultMap="SubCourseResultSet">
 		SELECT
@@ -38,5 +47,49 @@
 		WHERE
 		sc.COURSE_NO = #{courseNo}
 	</select>
+	
+	<select id="selectCourseDetail" resultMap="courseResultSet">
+		SELECT COURSE_NO,
+			   COURSE_NAME
+		FROM COURSE
+		WHERE COURSE_NO = #{courseNo} 
+	</select>
+		
+	<select id="selectListCount" resultType="_int">
+      SELECT COUNT(*)
+        FROM COURSE
+   </select>
+   
+   <select id="selectList" resultMap="courseResultSet">
+      SELECT COURSE_NO,
+            COURSE_NAME,
+            COURSE_AREA,
+            COURSE_TEMA,
+            COURSE_IMG
+        FROM COURSE
+       ORDER BY COURSE_NO ASC
+   </select>
+   
+   <!-- 필터 조건에 맞는 코스를 조회하는 SQL 쿼리 -->
+    <select id="findCoursesByFilters" resultMap="courseResultSet">
+        SELECT COURSE_NO,
+            COURSE_NAME,
+            COURSE_AREA,
+            COURSE_TEMA,
+            COURSE_IMG
+        FROM COURSE
+        WHERE 1=1
+        <if test="areas != null">
+            <foreach item="area" collection="areas" open="AND (" separator=" OR " close=")">
+                COURSE_AREA = #{area}
+            </foreach>
+        </if>
+        <if test="themes != null">
+            <foreach item="theme" collection="themes" open="AND (" separator=" OR " close=")">
+                COURSE_TEMA = #{theme}
+            </foreach>
+        </if>
+    </select>
+	
 
 </mapper>

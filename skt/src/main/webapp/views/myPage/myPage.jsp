@@ -364,8 +364,9 @@ body {
 						<c:forEach var="interested" items="${interestedList}">
 							<li>
 								<div class="info">
-									<img src="/Skt/resource/festival/${interested.fsImg}"
-										alt="축제 이미지">
+									     <a href="fesdatail.tf?fno=${interested.fsNo}">
+											<img src="/Skt/resource/festival/${interested.fsImg}"  alt="축제 이미지">
+									     </a>
 									<div class="text">
 										<strong>${interested.fsName}</strong><br> 날짜 :
 										${interested.fsStart}<br> 지역 : ${interested.fsArea}
@@ -389,8 +390,9 @@ body {
 						<c:forEach var="interestedTwo" items="${interestedListTwo}">
 							<li>
 								<div class="info">
-									<img src="/Skt/resource/tourThumb/${interestedTwo.tourImg}"
-										alt="투어 이미지">
+								<a href="detail.tf?tno=${interestedTwo.tourNo}">
+									<img src="/Skt/resource/tourThumb/${interestedTwo.tourImg}" alt="투어 이미지">
+									</a>
 									<div class="text">
 										<strong>${interestedTwo.tourName}</strong><br> 테마 :
 										${interestedTwo.tourTema}<br> 계절 :
@@ -409,6 +411,34 @@ body {
 					</c:if>
 					<c:if test="${empty interestedListTwo}">
 						<p>관심 있는 투어가 존재하지 않습니다.
+					</c:if>
+					<hr style="width: 90%;">
+					<h6 style="font-weight: 800;">코스</h6>
+					<c:if test="${not empty interestedListThree}">
+						<c:forEach var="interestedThree" items="${interestedListThree}">
+							<li>
+								<div class="info">
+								<a href="courseDetail.cs?cno=${interestedThree.courseNo}">
+									<img src="/Skt/views/course/img/courseThumbnail/${interestedThree.courseImg}" alt="투어 이미지">
+									</a>
+									<div class="text">
+										<strong>${interestedThree.courseName}</strong><br> 지역 :
+										${interestedThree.courseArea}<br> 테마 :
+										${interestedThree.courseTema}
+									</div>
+								</div>
+								<form action="interestedCourseDelete.mp" method="POST"
+									onsubmit="return confirm('정말 삭제하시겠습니까?');">
+									<input type="hidden" name="courseNo"
+										value="${interestedThree.courseNo}">
+									<button type="submit"
+										style="background-color: #ff4242; border-style: none; color: white; border-radius: 50%;">x</button>
+								</form>
+							</li>
+						</c:forEach>
+					</c:if>
+					<c:if test="${empty interestedListTwo}">
+						<p>관심 있는 코스가 존재하지 않습니다.
 					</c:if>
 					<hr style="width: 90%;">
 				</ul>

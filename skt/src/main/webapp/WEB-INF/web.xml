@@ -401,11 +401,7 @@
     <servlet-name>courseDetail.cs</servlet-name>
     <url-pattern>/courseDetail.cs</url-pattern>
   </servlet-mapping>
-<<<<<<< HEAD
   <servlet>
-=======
-<servlet>
->>>>>>> a29a27fd9db28423151b6955658271143303907e
     <description></description>
     <display-name>detail.tf</display-name>
     <servlet-name>detail.tf</servlet-name>
@@ -425,7 +421,6 @@
     <servlet-name>fesdatail.tf</servlet-name>
     <url-pattern>/fesdatail.tf</url-pattern>
   </servlet-mapping>
-<<<<<<< HEAD
   <servlet>
     <description></description>
     <display-name>tourInterested.ft</display-name>
@@ -446,6 +441,54 @@
     <servlet-name>fsInterested.ft</servlet-name>
     <url-pattern>/fsInterested.ft</url-pattern>
   </servlet-mapping>
-=======
->>>>>>> a29a27fd9db28423151b6955658271143303907e
+  <servlet>
+    <description></description>
+    <display-name>search.tf</display-name>
+    <servlet-name>search.tf</servlet-name>
+    <servlet-class>com.skt.tourfestival.controller.TourFestivalSearchController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>search.tf</servlet-name>
+    <url-pattern>/search.tf</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>course.c</display-name>
+    <servlet-name>course.c</servlet-name>
+    <servlet-class>com.skt.course.controller.CourseController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>course.c</servlet-name>
+    <url-pattern>/course.c</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>course.se</display-name>
+    <servlet-name>course.se</servlet-name>
+    <servlet-class>com.skt.course.controller.CourseSearchController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>course.se</servlet-name>
+    <url-pattern>/course.se</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>courseInterested.cs</display-name>
+    <servlet-name>courseInterested.cs</servlet-name>
+    <servlet-class>com.skt.course.controller.CourseInterestedController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>courseInterested.cs</servlet-name>
+    <url-pattern>/courseInterested.cs</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>interestedCourseDelete.mp</display-name>
+    <servlet-name>interestedCourseDelete.mp</servlet-name>
+    <servlet-class>com.skt.member.controller.myPageInterestedCourseDeleteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>interestedCourseDelete.mp</servlet-name>
+    <url-pattern>/interestedCourseDelete.mp</url-pattern>
+  </servlet-mapping>
 </web-app>

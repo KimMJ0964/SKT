@@ -2,7 +2,7 @@ package com.skt.member.model.vo;
 
 public class Interested {
 	private String memId;
-	private String courseNo;
+	private int courseNo;
 	private int fsNo;
 	private int tourNo;
 	
@@ -10,19 +10,12 @@ public class Interested {
 		super();
 	}
 	
-	public Interested(String memId, String courseNo, int fsNo, int tourNo) {
+	public Interested(String memId, int courseNo, int fsNo, int tourNo) {
 		super();
 		this.memId = memId;
 		this.courseNo = courseNo;
 		this.fsNo = fsNo;
 		this.tourNo = tourNo;
-	}
-	
-	public Interested(int fsNo, int tourNo, String memId) {
-		super();
-		this.fsNo = fsNo;
-		this.tourNo = tourNo;
-		this.memId = memId;
 	}
 
 	public String getMemId() {
@@ -33,11 +26,11 @@ public class Interested {
 		this.memId = memId;
 	}
 
-	public String getCourseNo() {
+	public int getCourseNo() {
 		return courseNo;
 	}
 
-	public void setCourseNo(String courseNo) {
+	public void setCourseNo(int courseNo) {
 		this.courseNo = courseNo;
 	}
 
