@@ -15,7 +15,7 @@
   
   <style>
   body {
-  	padding-bottom: 0;
+     padding-bottom: 0;
   }
   
   </style>
@@ -49,7 +49,7 @@
 
       </div>
     </section>
-    <section id="result" class="mx-auto my-4 py-5 px-3">
+    <section id="result" class="mx-auto py-5 px-3">
       <h3>나와 어울리는 축제는</h3>
       <div class="resultname"></div>
       <div id="resultImg">

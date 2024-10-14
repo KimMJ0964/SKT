@@ -9,10 +9,14 @@
 <link rel="stylesheet" href="./views/sub2_TF/css/TourFestivalList.css?after">
 
 <style>
-	body {
-		overflow-x: hidden;
-		margin: 0;
-	}
+	 body {
+      overflow-x: hidden;
+      margin: 0;
+   }
+   .nav-wrap a {
+   text-decoration: none;
+   color: #000;
+   }
 </style>
 </head>
 <body>
@@ -85,14 +89,14 @@
                     border-radius: 50px;
                     font-size: 20px;
                     font-weight: 800;
-                    margin-left: 480px;
+                    margin-left: 720px;
                     margin-top: 60px;
                     border: none;
                     padding-left: 20px;">
                 <div id="search-btn">
                     <button type="submit" class="search-btn" style="width: 170px;
                     height: 55px;
-                    margin-left: 640px;
+                    margin-left: 870px;
                     border: none;
                     border-radius: 20px;
                     color: #fff;
@@ -101,7 +105,6 @@
                     background-color: #6FBAFF;
                     margin-top: 30px;">검색</button>
                 </div>
-            </div>
         </form>
         <br><br><br>
            <div class="content2">

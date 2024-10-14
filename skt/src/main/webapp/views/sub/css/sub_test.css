@@ -77,6 +77,11 @@
     -webkit-text-stroke: 0.5px;
     padding-top: 30px;
   }
+  
+   #main img{
+  margin-top:100px;
+  margin-left: 80px;
+  }
   #main #test b{
     -webkit-text-stroke: 0.5px;
   }
@@ -105,7 +110,9 @@
   /* QnA */
   #qna{
     display: none;
-    margin-top: 100px;
+    margin-top: 150px;
+    margin-left: 200px;
+    width: 80%;
   }
   .qBox{
     margin-top: 150px;
