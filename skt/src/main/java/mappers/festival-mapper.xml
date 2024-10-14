@@ -51,5 +51,24 @@
 			   FS_LONG
 		FROM FESTIVAL
 		WHERE FS_NO = #{fsNo} </select>
-	
+		
+		<select id="searchFestivals" resultMap="FestivalResultSet">
+			SELECT * 
+			FROM FESTIVAL 
+			WHERE FS_NAME 
+			LIKE '%' || #{keyword} || '%'
+		</select>
+		
+		<update id="increaseFestivalLike">
+			UPDATE FESTIVAL 
+			SET FS_LIKE = FS_LIKE + 1 
+			WHERE FS_NO = #{tourNo}
+		</update>
+		
+		<update id="decreaseFestivalLike">
+			UPDATE FESTIVAL 
+			SET FS_LIKE = FS_LIKE - 1 
+			WHERE FS_NO = #{fsNo} 
+		</update>
 </mapper>
+	
